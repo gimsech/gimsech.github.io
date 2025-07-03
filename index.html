@@ -23,6 +23,12 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%232563eb' d='M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-87.5c4.3-7.1 12.3-11.3 20.8-10.8l85.2 5.1c14.8-18.4 31.3-33.5 49.5-45.3c-.1-2.3-.1-4.7-.1-7.1c0-27.2 16.1-51.7 41.2-62.5L312.7 16.4c7.5-3.2 16-.3 20.5 7.1L372.3 80c4.5 7.4 3.8 16.9-1.7 23.5L334.1 140c-5.4 6.5-13.7 9.7-21.9 8.4c-13-2.1-26.8-3.2-41.2-3.2c-78.6 0-147.8 48.4-175.4 122.1c-5.1 13.6-8.1 27.9-8.1 42.6c0 61.9 45.1 113.4 104.4 123.3l10.6-68.1c2-12.8 9.4-24.2 20.1-30.8L264 275.2c10.7-6.6 24.2-6.6 34.9 0L340.1 304c10.7 6.6 18.1 18 20.1 30.8l10.6 68.1c59.3-9.9 104.4-61.4 104.4-123.3c0-69.1-56-125.1-125.1-125.1c-32.8 0-62.7 12.6-84.8 33.2c-8.1 7.6-20.6 7.6-28.7 0c-22.1-20.6-52-33.2-84.8-33.2C82.7 154.5 26.7 210.5 26.7 279.6c0 61.9 45.1 113.4 104.4 123.3l10.6-68.1c2-12.8 9.4-24.2 20.1-30.8L256 234.5l94.2 69.5c10.7 6.6 18.1 18 20.1 30.8l10.6 68.1z'/></svg>" type="image/svg+xml">
+    
     <!-- Language Detection and Management -->
     <script>
         // Language translations
@@ -30,19 +36,15 @@
             de: {
                 // Navigation
                 about: "Über mich",
-                blog: "Blog",
-                portfolio: "Portfolio",
-                contact: "Kontakt",
                 resume: "Lebenslauf",
                 skills: "Fähigkeiten",
                 recommendations: "Empfehlungen",
                 
                 // Hero Section
-                heroTitle: "Gedanken und Ideen eines",
-                heroSubtitle: "Creative Technologisten",
-                heroDescription: "Hallo, mein Name ist Philipp Süß. Ich bin Marketing Lead bei GAMOMAT und schreibe hier über Technologie, Design und alles was mich beschäftigt.",
+                heroTitle: "Philipp Süß",
+                heroSubtitle: "Marketing Lead & Generalist",
+                heroDescription: "Generalist marketer with a process-first mindset. After five years at GAMOMAT—and as Marketing Lead since November 2024—I question, map, and refine every workflow, plug in the right tools and pragmatic AI, and keep stakeholders aligned so work flows and value compounds. I see the big picture, but I'm just as happy rolling up my sleeves to ship deliverables—committed, curious, and always optimising.",
                 viewResume: "Lebenslauf ansehen",
-                getInTouch: "Kontakt aufnehmen",
                 
                 // Skills Section
                 skillsTitle: "Fähigkeiten & Expertise",
@@ -67,101 +69,28 @@
                 aboutTitle: "Über mich",
                 aboutHello: "Hallo,",
                 aboutIntro: "mein Name ist Philipp Süß, ich bin Marketing Lead bei",
-                aboutDescription: "Dieser Blog ist ein Versuch meinen geistigen Verfall ein bisschen auszubremsen und meine Gedanken, Projekte und Ideen etwas aufzuzeichnen. Dabei versuche ich mich über diese Freizeitbeschäftigung zu zwingen mich weitergehend mit Themen zu beschäftigen, die mich interessieren und weiterbilden.",
+                aboutDescription: "Mit über 10 Jahren Erfahrung in Marketing, Design und Strategieentwicklung bin ich ein Generalist mit einem prozessorientierten Mindset. Meine Laufbahn begann im Interface Design und entwickelte sich über Online Marketing hin zur strategischen Marketingführung. Als Generalist optimiere ich Workflows, integriere die richtigen Tools und pragmatische AI-Lösungen und halte die Stakeholder auf einer Linie, damit Arbeitsprozesse fließen und Mehrwert entsteht.",
                 certifications: "Zertifizierungen",
-                
-                // Blog Section
-                blogTitle: "Aktuelle Artikel",
-                allArticles: "Alle Artikel ansehen",
-                
-                // Portfolio Section
-                portfolioTitle: "Portfolio",
-                portfolioDescription: "Ein Auszug aus Dingen, die ich mal gemacht habe und an denen ich arbeite.",
-                viewProject: "Projekt ansehen",
-                visitGithub: "GitHub besuchen",
-                viewPortfolio: "Portfolio ansehen",
-                
-                // Contact Section
-                contactTitle: "Kontakt",
-                contactDescription: "Interesse an einem Austausch? Ich freue mich über neue Kontakte und spannende Projekte.",
-                codeProjects: "Code & Projekte",
-                professionalNetwork: "Berufliches Netzwerk",
-                thoughtsUpdates: "Gedanken & Updates",
-                directContact: "Direkter Kontakt",
-                
-                // Footer
-                copyright: "copyright",
-                imprint: "Impressum",
-                privacy: "Datenschutz",
-                release: "Release Notes"
             },
             en: {
                 // Navigation
                 about: "About",
-                blog: "Blog",
-                portfolio: "Portfolio",
-                contact: "Contact",
                 resume: "Resume",
-                skills: "Skills",
+                skills: "Skills", 
                 recommendations: "Recommendations",
                 
                 // Hero Section
-                heroTitle: "Thoughts and Ideas of a",
-                heroSubtitle: "Creative Technologist",
-                heroDescription: "Hello, my name is Philipp Süß. I am Marketing Lead at GAMOMAT and write here about technology, design and everything that occupies my mind.",
+                heroTitle: "Philipp Süß",
+                heroSubtitle: "Marketing Lead & Generalist",
+                heroDescription: "Generalist marketer with a process-first mindset. After five years at GAMOMAT—and as Marketing Lead since November 2024—I question, map, and refine every workflow, plug in the right tools and pragmatic AI, and keep stakeholders aligned so work flows and value compounds. I see the big picture, but I'm just as happy rolling up my sleeves to ship deliverables—committed, curious, and always optimising.",
                 viewResume: "View Resume",
-                getInTouch: "Get in Touch",
-                
-                // Skills Section
-                skillsTitle: "Skills & Expertise",
-                skillsDescription: "My core competencies in various areas of technology and marketing",
-                technicalSkills: "Technical Skills",
-                marketingSkills: "Marketing & Strategy",
-                softSkills: "Soft Skills",
-                
-                // Recommendations Section
-                recommendationsTitle: "Recommendations",
-                recommendationsDescription: "What colleagues and business partners say about me",
-                
-                // Resume Section
-                resumeTitle: "Resume",
-                experience: "Work Experience",
-                education: "Education",
-                skills: "Skills",
-                present: "present",
-                currentPosition: "Current Position",
                 
                 // About Section
                 aboutTitle: "About Me",
                 aboutHello: "Hello,",
                 aboutIntro: "my name is Philipp Süß, I am Marketing Lead at",
-                aboutDescription: "This blog is an attempt to slow down my mental decay a bit and record my thoughts, projects and ideas. I try to force myself through this hobby to deal more extensively with topics that interest and educate me.",
-                certifications: "Certifications",
-                
-                // Blog Section
-                blogTitle: "Latest Articles",
-                allArticles: "View All Articles",
-                
-                // Portfolio Section
-                portfolioTitle: "Portfolio",
-                portfolioDescription: "A selection of things I have done and am working on.",
-                viewProject: "View Project",
-                visitGithub: "Visit GitHub",
-                viewPortfolio: "View Portfolio",
-                
-                // Contact Section
-                contactTitle: "Contact",
-                contactDescription: "Interested in an exchange? I look forward to new contacts and exciting projects.",
-                codeProjects: "Code & Projects",
-                professionalNetwork: "Professional Network",
-                thoughtsUpdates: "Thoughts & Updates",
-                directContact: "Direct Contact",
-                
-                // Footer
-                copyright: "copyright",
-                imprint: "Imprint",
-                privacy: "Privacy",
-                release: "Release Notes"
+                aboutDescription: "With over 10 years of experience in marketing, design and strategic development, I am a generalist with a process-first mindset. My career started in interface design and evolved through online marketing to strategic marketing leadership. As a generalist, I optimise workflows, integrate the right tools and pragmatic AI solutions, and keep stakeholders aligned so work flows and value compounds.",
+                certifications: "Certifications"
             }
         };
         
@@ -229,7 +158,8 @@
         <div class="max-w-4xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-8">
-                    <a href="#home" class="text-xl font-semibold text-gray-900 hover:text-primary transition-colors">
+                    <a href="#home" class="text-xl font-semibold text-gray-900 hover:text-primary transition-colors flex items-center">
+                        <i class="fas fa-rocket text-primary mr-2"></i>
                         Philipp Süß
                     </a>
                     <div class="hidden md:flex space-x-6">
@@ -237,7 +167,6 @@
                         <a href="#skills" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="skills">Fähigkeiten</a>
                         <a href="#recommendations" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="recommendations">Empfehlungen</a>
                         <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="about">Über mich</a>
-                        <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="contact">Kontakt</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -269,20 +198,17 @@
                 <img src="https://github.com/gimsech.png" alt="Philipp Süß" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg">
             </div>
             <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-                <span data-translate="heroTitle">Gedanken und Ideen eines</span><br>
-                <span class="text-primary" data-translate="heroSubtitle">Creative Technologisten</span>
+                <span data-translate="heroTitle">Philipp Süß</span><br>
+                <span class="text-primary" data-translate="heroSubtitle">Marketing Lead & Generalist</span>
             </h1>
             <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-translate="heroDescription">
-                Hallo, mein Name ist Philipp Süß. Ich bin Marketing Lead bei GAMOMAT und schreibe hier über Technologie, Design und alles was mich beschäftigt.
+                Generalist marketer with a process-first mindset. After five years at GAMOMAT—and as Marketing Lead since November 2024—I question, map, and refine every workflow, plug in the right tools and pragmatic AI, and keep stakeholders aligned so work flows and value compounds. I see the big picture, but I'm just as happy rolling up my sleeves to ship deliverables—committed, curious, and always optimising.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#resume" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors" data-translate="viewResume">
-                    Lebenslauf ansehen
-                </a>
-                <a href="#contact" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors" data-translate="getInTouch">
-                    Kontakt aufnehmen
-                </a>
-            </div>
+                <div>
+                    <a href="#resume" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors" data-translate="viewResume">
+                        Lebenslauf ansehen
+                    </a>
+                </div>
         </div>
     </section>
 
@@ -302,18 +228,23 @@
                     <!-- Current Position - Marketing Lead -->
                     <div class="relative flex items-start">
                         <!-- Date Section -->
-                        <div class="w-28 text-right pr-8 pt-6">
+                        <div class="w-32 text-right pr-8 pt-6">
                             <div class="text-sm font-bold text-gray-900">Nov 2024</div>
                             <div class="text-xs text-gray-500 mb-2">heute</div>
+                            <div class="text-xs text-gray-500 mb-2">(0 Jahre, 3 Monate)</div>
                             <div class="w-6 h-6 bg-primary rounded-full border-4 border-white shadow-xl absolute right-5 top-6 ring-4 ring-blue-100"></div>
                         </div>
                         <!-- Content Card -->
                         <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <h4 class="text-2xl font-bold text-gray-900">Marketing Lead</h4>
-                                <span class="text-sm bg-primary text-white px-3 py-1 rounded-full font-medium" data-translate="currentPosition">Aktuelle Position</span>
+                                <div class="flex gap-2">
+                                    <span class="text-sm bg-primary text-white px-3 py-1 rounded-full font-medium" data-translate="currentPosition">Aktuelle Position</span>
+                                    <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">Beförderung</span>
+                                </div>
                             </div>
-                            <p class="text-lg text-primary font-semibold mb-4">GAMOMAT Development GmbH</p>
+                            <p class="text-lg text-primary font-semibold mb-2">GAMOMAT Development GmbH</p>
+                            <p class="text-sm text-gray-500 mb-4">📈 Beförderung innerhalb des Unternehmens nach erfolgreicher Leistung als Senior Marketing Manager</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Leitung des Marketing-Teams und strategische Marketingentwicklung. Verantwortung für die gesamte Marketingstrategie und Teamführung in einem der führenden Gaming-Unternehmen.
                             </p>
@@ -329,17 +260,22 @@
                     
                     <!-- Senior Marketing Manager -->
                     <div class="relative flex items-start">
-                        <div class="w-28 text-right pr-8 pt-6">
+                        <div class="w-32 text-right pr-8 pt-6">
                             <div class="text-sm font-bold text-gray-900">Okt 2022</div>
                             <div class="text-xs text-gray-500 mb-2">Okt 2024</div>
+                            <div class="text-xs text-gray-500 mb-2">(2 Jahre, 1 Monat)</div>
                             <div class="w-6 h-6 bg-primary rounded-full border-4 border-white shadow-xl absolute right-5 top-6 ring-4 ring-blue-100"></div>
                         </div>
                         <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <h4 class="text-2xl font-bold text-gray-900">Senior Marketing Manager</h4>
-                                <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">2 Jahre</span>
+                                <div class="flex gap-2">
+                                    <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">2 Jahre, 1 Monat</span>
+                                    <span class="text-sm bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-medium">Beförderung</span>
+                                </div>
                             </div>
-                            <p class="text-lg text-primary font-semibold mb-4">GAMOMAT Development GmbH</p>
+                            <p class="text-lg text-primary font-semibold mb-2">GAMOMAT Development GmbH</p>
+                            <p class="text-sm text-gray-500 mb-4">📈 Beförderung nach erfolgreicher Leistung als Marketing Manager</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Entwicklung und Umsetzung strategischer Marketingkampagnen im B2B-Bereich. Fokus auf internationale Expansion und Produktmarketing.
                             </p>
@@ -354,17 +290,21 @@
                     
                     <!-- Marketing Manager -->
                     <div class="relative flex items-start">
-                        <div class="w-28 text-right pr-8 pt-6">
+                        <div class="w-32 text-right pr-8 pt-6">
                             <div class="text-sm font-bold text-gray-900">Mai 2020</div>
                             <div class="text-xs text-gray-500 mb-2">Sep 2022</div>
+                            <div class="text-xs text-gray-500 mb-2">(2 Jahre, 5 Monate)</div>
                             <div class="w-6 h-6 bg-primary rounded-full border-4 border-white shadow-xl absolute right-5 top-6 ring-4 ring-blue-100"></div>
                         </div>
-                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-primary hover:shadow-2xl transition-all duration-300 hover:scale-105">                                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <h4 class="text-2xl font-bold text-gray-900">Marketing Manager</h4>
-                                <span class="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-medium">2,5 Jahre</span>
+                                <div class="flex gap-2">
+                                    <span class="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-medium">2 Jahre, 5 Monate</span>
+                                    <span class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Einstieg</span>
+                                </div>
                             </div>
-                            <p class="text-lg text-primary font-semibold mb-4">GAMOMAT Development GmbH</p>
+                            <p class="text-lg text-primary font-semibold mb-2">GAMOMAT Development GmbH</p>
+                            <p class="text-sm text-gray-500 mb-4">🚀 Einstieg bei GAMOMAT - Start einer erfolgreichen Karriere im Gaming-Marketing</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Fokus auf Social Media Marketing und Online-Marketing-Strategien. Aufbau der digitalen Präsenz und Content-Strategien.
                             </p>
@@ -378,15 +318,16 @@
                     
                     <!-- Senior Online Marketing Manager -->
                     <div class="relative flex items-start">
-                        <div class="w-28 text-right pr-8 pt-6">
-                            <div class="text-sm font-bold text-gray-900">Feb 2019</div>
+                        <div class="w-32 text-right pr-8 pt-6">
+                            <div class="text-sm font-medium text-gray-900">Feb 2019</div>
                             <div class="text-xs text-gray-500 mb-2">Apr 2020</div>
-                            <div class="w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-xl absolute right-5 top-6 ring-4 ring-orange-100"></div>
+                            <div class="text-xs text-gray-500 mb-2">(1 Jahr, 3 Monate)</div>
+                            <div class="w-4 h-4 bg-orange-500 rounded-full border-4 border-white shadow-lg absolute right-6 top-6"></div>
                         </div>
-                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-orange-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-500 hover:shadow-xl transition-shadow">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <h4 class="text-2xl font-bold text-gray-900">Senior Online Marketing Manager</h4>
-                                <span class="text-sm bg-orange-100 text-orange-800 px-3 py-1 rounded-full font-medium">1,3 Jahre</span>
+                                <span class="text-sm bg-orange-100 text-orange-800 px-3 py-1 rounded-full">1 Jahr, 3 Monate</span>
                             </div>
                             <p class="text-lg text-orange-600 font-semibold mb-4">close2real GmbH</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
@@ -404,45 +345,50 @@
                     
                     <!-- Creative Strategist -->
                     <div class="relative flex items-start">
-                        <div class="w-28 text-right pr-8 pt-6">
-                            <div class="text-sm font-bold text-gray-900">Jul 2013</div>
+                        <div class="w-32 text-right pr-8 pt-6">
+                            <div class="text-sm font-medium text-gray-900">Jul 2013</div>
                             <div class="text-xs text-gray-500 mb-2">Jan 2019</div>
-                            <div class="w-6 h-6 bg-red-500 rounded-full border-4 border-white shadow-xl absolute right-5 top-6 ring-4 ring-red-100"></div>
+                            <div class="text-xs text-gray-500 mb-2">(5 Jahre, 6 Monate)</div>
+                            <div class="w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-lg absolute right-6 top-6"></div>
                         </div>
-                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-lg border-l-4 border-red-500 hover:shadow-xl transition-shadow">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                                 <h4 class="text-2xl font-bold text-gray-900">Creative Strategist</h4>
-                                <span class="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full font-medium">5,5 Jahre</span>
+                                <span class="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-full">5 Jahre, 6 Monate</span>
                             </div>
                             <p class="text-lg text-red-600 font-semibold mb-4">medienimpuls – creative excellence</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
-                                Entwicklung digitaler Medien und Umsetzung innovativer Projekte. Schwerpunkt auf kreative Problemlösung und digitale Transformation.
+                                Kreative Strategieentwicklung mit Fokus auf Interface Design und Branding. Entwicklung von Markenidentitäten und digitalen Lösungen für B2B-Kunden.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Digitale Medien</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Kreative Strategie</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Projektmanagement</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Interface Design</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Grafikdesign</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Brand Strategy</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Social Media</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Ausbildung -->
+                    <!-- Education -->
                     <div class="relative flex items-start">
-                        <div class="w-28 text-right pr-8 pt-6">
-                            <div class="text-sm font-bold text-gray-900">2007</div>
+                        <div class="w-32 text-right pr-8 pt-6">
+                            <div class="text-sm font-medium text-gray-900">2010</div>
                             <div class="text-xs text-gray-500 mb-2">2013</div>
-                            <div class="w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-xl absolute right-5 top-6 ring-4 ring-green-100"></div>
+                            <div class="text-xs text-gray-500 mb-2">(3 Jahre)</div>
+                            <div class="w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-lg absolute right-6 top-6"></div>
                         </div>
-                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-xl border-l-4 border-green-500 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="flex-1 ml-8 bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-500 hover:shadow-xl transition-shadow">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                                <h4 class="text-2xl font-bold text-gray-900">Tutor für digitale Medien</h4>
-                                <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">6 Jahre</span>
+                                <h4 class="text-2xl font-bold text-gray-900">Studium Design & Medien</h4>
+                                <span class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">3 Jahre</span>
                             </div>
-                            <p class="text-lg text-green-600 font-semibold mb-4">Verschiedene Bildungseinrichtungen</p>
+                            <p class="text-lg text-green-600 font-semibold mb-4">Hochschule Hof, University of Applied Sciences</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
-                                Betreuung und Schulung von Studierenden in digitalen Medien, Webentwicklung und Design. Entwicklung von Lehrplänen und Projektbetreuung.
+                                Schwerpunkt Interface Design, Fotografie und digitale Medien. Während des Studiums als Tutor für Fotografie tätig und verschiedene Praktika absolviert.
                             </p>
                             <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Interface Design</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Fotografie</span>
                                 <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Digitale Medien</span>
                                 <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Tutor</span>
                             </div>
@@ -457,7 +403,7 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center text-gray-900" data-translate="skillsTitle">Fähigkeiten & Expertise</h2>
+            <h2 class="text-4xl font-bold mb-16 text-center text-gray-900" data-translate="skills">Fähigkeiten & Expertise</h2>
             
             <!-- Core Competencies -->
             <div class="grid lg:grid-cols-2 gap-12 mb-16">
@@ -575,32 +521,24 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             
             <!-- Certifications -->
             <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center" data-translate="certifications">Zertifizierungen</h3>
-                <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    <div class="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <span class="text-white font-bold text-sm">G</span>
-                        </div>
-                        <h4 class="font-semibold text-gray-900">Google Analytics</h4>
-                        <p class="text-sm text-gray-600">Zertifizierung</p>
-                    </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Zertifizierungen & Weiterbildungen</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                         <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-3">
                             <span class="text-white font-bold text-sm">G</span>
                         </div>
-                        <h4 class="font-semibold text-gray-900">Google Ads</h4>
-                        <p class="text-sm text-gray-600">Zertifizierung</p>
+                        <h4 class="font-semibold text-gray-900">Google Analytics</h4>
+                        <p class="text-sm text-gray-600">Certified Professional</p>
                     </div>
                     <div class="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <span class="text-white font-bold text-sm">H</span>
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-white font-bold text-sm">G</span>
                         </div>
-                        <h4 class="font-semibold text-gray-900">HubSpot</h4>
+                        <h4 class="font-semibold text-gray-900">Google Ads</h4>
                         <p class="text-sm text-gray-600">Grundlagen</p>
                     </div>
                     <div class="text-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
@@ -625,7 +563,7 @@
     <!-- Recommendations Section -->
     <section id="recommendations" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center text-gray-900" data-translate="recommendationsTitle">Empfehlungen</h2>
+            <h2 class="text-4xl font-bold mb-16 text-center text-gray-900" data-translate="recommendations">Empfehlungen von Kollegen</h2>
             
             <!-- Add your LinkedIn recommendations here -->
             <div class="grid lg:grid-cols-2 gap-8">
@@ -713,101 +651,52 @@
                         <a href="https://gamomat.berlin" target="_blank" class="text-primary hover:underline">GAMOMAT</a>.
                     </p>
                     <p class="text-gray-600 mb-6" data-translate="aboutDescription">
-                        Dieser Blog ist ein Versuch meinen geistigen Verfall ein bisschen auszubremsen 
-                        und meine Gedanken, Projekte und Ideen etwas aufzuzeichnen. Dabei versuche ich 
-                        mich über diese Freizeitbeschäftigung zu zwingen mich weitergehend mit Themen zu 
-                        beschäftigen, die mich interessieren und weiterbilden.
+                        Mit über 10 Jahren Erfahrung in Marketing, Design und Strategieentwicklung bin ich ein Generalist mit einem prozessorientierten Mindset. Meine Laufbahn begann im Interface Design und entwickelte sich über Online Marketing hin zur strategischen Marketingführung. Als Generalist optimiere ich Workflows, integriere die richtigen Tools und pragmatische AI-Lösungen und halte die Stakeholder auf einer Linie, damit Arbeitsprozesse fließen und Mehrwert entsteht.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Bei GAMOMAT durchlief ich eine kontinuierliche Weiterentwicklung vom Marketing Manager über Senior Marketing Manager zum aktuellen Marketing Lead - eine Reise, die sowohl mein Verständnis für das große Ganze als auch meine Bereitschaft, die Ärmel hochzukrempeln und Ergebnisse zu liefern, unter Beweis stellt. Ich bin engagiert, neugierig und stets auf der Suche nach Optimierungspotenzial.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <a href="https://twitter.com/gimsech" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-                            Twitter
-                        </a>
-                        <a href="https://www.instagram.com/gimsech/" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-                            Instagram
-                        </a>
-                        <a href="https://www.linkedin.com/in/philippsuess/" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+                        <a href="https://www.linkedin.com/in/philippsuess/" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                             LinkedIn
                         </a>
                         <a href="https://www.xing.com/profile/Philipp_Suess2" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
                             XING
                         </a>
-                        <a href="https://gimsech.de" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            Blog besuchen
+                        <a href="https://github.com/gimsech" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+                            GitHub
                         </a>
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-900">Persönliche Interessen</h3>
+                    <h3 class="text-xl font-semibold mb-6 text-gray-900">Kernkompetenzen</h3>
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <span class="text-primary mr-3">•</span>
-                            <span class="text-gray-700">Technologie & Innovation</span>
+                            <span class="text-gray-700">Prozessoptimierung & Workflow-Management</span>
                         </div>
                         <div class="flex items-center">
                             <span class="text-primary mr-3">•</span>
-                            <span class="text-gray-700">Künstliche Intelligenz</span>
+                            <span class="text-gray-700">B2B Marketing & International Expansion</span>
                         </div>
                         <div class="flex items-center">
                             <span class="text-primary mr-3">•</span>
-                            <span class="text-gray-700">Design & User Experience</span>
+                            <span class="text-gray-700">Pragmatische AI-Integration & Automatisierung</span>
                         </div>
                         <div class="flex items-center">
                             <span class="text-primary mr-3">•</span>
-                            <span class="text-gray-700">Gaming Industry</span>
+                            <span class="text-gray-700">Stakeholder Alignment & Team-Leadership</span>
                         </div>
                         <div class="flex items-center">
                             <span class="text-primary mr-3">•</span>
-                            <span class="text-gray-700">Fotografie</span>
+                            <span class="text-gray-700">Strategische Planung & Umsetzung</span>
                         </div>
                         <div class="flex items-center">
                             <span class="text-primary mr-3">•</span>
-                            <span class="text-gray-700">Reisen & Kulturen</span>
+                            <span class="text-gray-700">Hands-on Delivery & kontinuierliche Optimierung</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8 text-gray-900" data-translate="contactTitle">Kontakt</h2>
-            <p class="text-xl text-gray-600 mb-12" data-translate="contactDescription">
-                Interesse an einer Zusammenarbeit oder einem Austausch? Ich freue mich über neue Kontakte und spannende Projekte.
-            </p>
-            <div class="grid md:grid-cols-3 gap-6">
-                
-                <a href="https://github.com/gimsech" target="_blank" class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">GitHub</h3>
-                    <p class="text-gray-600 text-sm" data-translate="codeProjects">Code & Projekte</p>
-                </a>
-
-                <a href="https://www.linkedin.com/in/philippsuess/" target="_blank" class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">LinkedIn</h3>
-                    <p class="text-gray-600 text-sm" data-translate="professionalNetwork">Berufliches Netzwerk</p>
-                </a>
-
-                <a href="https://gimsech.de" target="_blank" class="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5zM15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Blog</h3>
-                    <p class="text-gray-600 text-sm">Gedanken & Artikel</p>
-                </a>
-
             </div>
         </div>
     </section>
@@ -816,12 +705,11 @@
     <footer class="bg-white border-t border-gray-100 py-12">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <p class="text-gray-600 mb-4">
-                <span data-translate="copyright">copyright</span> <a href="https://gimsech.de/ueber-mich/" target="_blank" class="text-primary hover:underline">philipp süß</a>
+                © 2025 Philipp Süß
             </p>
             <div class="flex justify-center space-x-6 text-sm text-gray-500">
-                <a href="https://gimsech.de/impressum/" target="_blank" class="hover:text-gray-700" data-translate="imprint">Impressum</a>
-                <a href="https://gimsech.de/datenschutz/" target="_blank" class="hover:text-gray-700" data-translate="privacy">Datenschutz</a>
-                <a href="https://gimsech.de/release/" target="_blank" class="hover:text-gray-700" data-translate="release">Release Notes</a>
+                <a href="https://www.linkedin.com/in/philippsuess/" target="_blank" class="hover:text-gray-700">LinkedIn</a>
+                <a href="https://www.xing.com/profile/Philipp_Suess2" target="_blank" class="hover:text-gray-700">XING</a>
             </div>
         </div>
     </footer>
@@ -834,7 +722,8 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
@@ -842,13 +731,10 @@
 
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', function() {
-                if (mobileMenu) {
-                    mobileMenu.classList.toggle('hidden');
-                }
+                console.log('Mobile menu clicked');
+                // Mobile menu functionality can be added here
             });
         }
     </script>
