@@ -1,119 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gimsech - Developer</title>
+    <title>Philipp Süß - Creative Technologist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'mono': ['JetBrains Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['Monaco', 'Menlo', 'monospace']
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#64748b'
                     }
                 }
             }
         }
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white font-mono">
-    <!-- Header -->
-    <header class="bg-gray-800 shadow-lg">
-        <nav class="container mx-auto px-6 py-4">
+<body class="bg-white text-gray-900 font-sans leading-relaxed">
+    
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-blue-400">gimsech</span>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
-                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                <div class="flex items-center space-x-8">
+                    <a href="#home" class="text-xl font-semibold text-gray-900 hover:text-primary transition-colors">
+                        Philipp Süß
+                    </a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">Über mich</a>
+                        <a href="#blog" class="text-gray-600 hover:text-gray-900 transition-colors">Blog</a>
+                        <a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition-colors">Portfolio</a>
+                        <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">Kontakt</a>
+                    </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div class="text-center">
+    <section id="home" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="mb-8">
-                <img src="https://github.com/gimsech.png" alt="gimsech" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-400">
+                <img src="https://github.com/gimsech.png" alt="Philipp Süß" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg">
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">
-                <span class="text-blue-400">Hello,</span>
-                <span class="text-white">I'm</span>
-                <span class="text-green-400">gimsech</span>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+                Gedanken und Ideen eines<br>
+                <span class="text-primary">Creative Technologisten</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Developer • Creator • Problem Solver
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Hallo, mein Name ist Philipp Süß. Ich bin Marketing Manager bei GAMOMAT und schreibe hier über Technologie, Design und alles was mich beschäftigt.
             </p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://github.com/gimsech" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors">
-                    GitHub
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#blog" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    Zum Blog
                 </a>
-                <a href="#contact" class="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-3 rounded-lg transition-colors">
-                    Contact
+                <a href="https://gimsech.de" target="_blank" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    Hauptseite besuchen
                 </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold mb-8 text-white">About Me</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="text-left">
-                        <p class="text-lg text-gray-300 mb-6">
-                            I'm a passionate developer who loves creating things that make a difference. 
-                            Always learning, always building, always improving.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <span class="text-blue-400 mr-3">▶</span>
-                                <span class="text-gray-300">Full-stack Development</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="text-blue-400 mr-3">▶</span>
-                                <span class="text-gray-300">Open Source Contributor</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="text-blue-400 mr-3">▶</span>
-                                <span class="text-gray-300">Problem Solver</span>
-                            </div>
-                        </div>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-900">Über mich</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-900">Hallo,</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        mein Name ist Philipp Süß, ich bin Marketing Manager bei <a href="https://gamomat.berlin" target="_blank" class="text-primary hover:underline">GAMOMAT</a>.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Dieser Blog ist ein Versuch meinen geistigen Verfall ein bisschen auszubremsen 
+                        und meine Gedanken, Projekte und Ideen etwas aufzuzeichnen. Dabei versuche ich 
+                        mich über diese Freizeitbeschäftigung zu zwingen mich weitergehend mit Themen zu 
+                        beschäftigen, die mich interessieren und weiterbilden.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://twitter.com/gimsech" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+                            Twitter
+                        </a>
+                        <a href="https://www.instagram.com/gimsech/" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+                            Instagram
+                        </a>
+                        <a href="https://www.linkedin.com/in/gimsech/" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+                            LinkedIn
+                        </a>
+                        <a href="https://www.xing.com/profile/Philipp_Suess2" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+                            XING
+                        </a>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4 text-blue-400">Tech Stack</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-gray-800 p-3 rounded text-center">
-                                <span class="text-orange-400">JavaScript</span>
-                            </div>
-                            <div class="bg-gray-800 p-3 rounded text-center">
-                                <span class="text-blue-400">TypeScript</span>
-                            </div>
-                            <div class="bg-gray-800 p-3 rounded text-center">
-                                <span class="text-green-400">Node.js</span>
-                            </div>
-                            <div class="bg-gray-800 p-3 rounded text-center">
-                                <span class="text-blue-300">React</span>
-                            </div>
-                            <div class="bg-gray-800 p-3 rounded text-center">
-                                <span class="text-purple-400">Python</span>
-                            </div>
-                            <div class="bg-gray-800 p-3 rounded text-center">
-                                <span class="text-red-400">Git</span>
-                            </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-900">Zertifizierungen</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <span class="text-primary mr-3">•</span>
+                            <span class="text-gray-700">Google Analytics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-primary mr-3">•</span>
+                            <span class="text-gray-700">Google Ads Grundlagen</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-primary mr-3">•</span>
+                            <span class="text-gray-700">Zertifizierung für Onlinewerbung und Vertrieb</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-primary mr-3">•</span>
+                            <span class="text-gray-700">Grundlagen des Onlinemarketing</span>
                         </div>
                     </div>
                 </div>
@@ -121,146 +131,233 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold mb-12 text-center text-white">Featured Projects</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card Template -->
-                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-xl font-bold text-white">Project Name</h3>
-                                <span class="text-sm text-gray-400">2024</span>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                A brief description of what this project does and why it's awesome.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">JavaScript</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">Node.js</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-900">Aktuelle Artikel</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">5. April 2023</span>
                     </div>
-                    
-                    <!-- Additional project cards -->
-                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-xl font-bold text-white">Another Project</h3>
-                                <span class="text-sm text-gray-400">2024</span>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Another cool project that showcases different skills and technologies.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">Python</span>
-                                <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">Django</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                        <a href="https://gimsech.de/top-10-unvergesslichen-erlebnisse-in-valencia/" target="_blank" class="hover:text-primary transition-colors">
+                            Die Top 10 unvergesslichen Erlebnisse in Valencia
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Entdecke die Geheimnisse dieser spanischen Perle und erfahre, welche Erlebnisse Valencia zu einem unvergesslichen Reiseziel machen.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Reisen</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Gedanken</span>
                     </div>
-                    
-                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-xl font-bold text-white">Cool Tool</h3>
-                                <span class="text-sm text-gray-400">2023</span>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                A utility tool that helps developers be more productive and efficient.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">TypeScript</span>
-                                <span class="bg-cyan-600 text-white px-2 py-1 rounded text-sm">React</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">12. September 2021</span>
                     </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                        <a href="https://gimsech.de/in-5-minuten-die-ersten-bitcoin-ethereum-solana-andere-kryptowaehrungen-kaufen/" target="_blank" class="hover:text-primary transition-colors">
+                            In 5 Minuten die ersten Bitcoin, Ethereum, Solana & andere Kryptowährungen kaufen
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Eine einfache Anleitung für den Einstieg in die Welt der Kryptowährungen.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Crypto</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Investment</span>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">16. September 2018</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                        <a href="https://gimsech.de/praktische-google-tabellen-formeln/" target="_blank" class="hover:text-primary transition-colors">
+                            Praktische Google Tabellen Formeln
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Nützliche Formeln und Tricks für Google Tabellen, die den Arbeitsalltag erleichtern.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Google</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Web</span>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">6. Dezember 2017</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                        <a href="https://gimsech.de/barrierefreie-optimierung-im-design/" target="_blank" class="hover:text-primary transition-colors">
+                            Barrierefreie Optimierung im Design
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Wie Design für alle zugänglich gemacht werden kann und warum Barrierefreiheit wichtig ist.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Design</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Accessibility</span>
+                    </div>
+                </article>
+
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://gimsech.de" target="_blank" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    Alle Artikel ansehen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-900">Portfolio</h2>
+            <p class="text-xl text-gray-600 mb-12 text-center">
+                Ein Auszug aus Dingen, die ich mal gemacht habe und an denen ich arbeite.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Portfolio Item 1 -->
+                <div class="bg-gray-50 rounded-lg p-8 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">Flötentrio</h3>
+                    <p class="text-gray-600 mb-6">
+                        Ein interaktives Projekt aus meiner Studienzeit, das die Verbindung zwischen Musik und Technologie erforscht.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Interaktiv</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Musik</span>
+                    </div>
+                    <a href="https://gimsech.de/portfolio/floetentrio/" target="_blank" class="text-primary hover:underline">
+                        Projekt ansehen →
+                    </a>
                 </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="bg-gray-50 rounded-lg p-8 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">Münchberg</h3>
+                    <p class="text-gray-600 mb-6">
+                        Ein umfassendes Identitätsprojekt aus meiner Studienzeit, das sich mit Stadtentwicklung und Branding beschäftigt.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Identität</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Branding</span>
+                    </div>
+                    <a href="https://gimsech.de/portfolio/muenchberg/" target="_blank" class="text-primary hover:underline">
+                        Projekt ansehen →
+                    </a>
+                </div>
+
+                <!-- GitHub Projects -->
+                <div class="bg-gray-50 rounded-lg p-8 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">GitHub Projekte</h3>
+                    <p class="text-gray-600 mb-6">
+                        Open Source Projekte und Code-Experimente, die ich auf GitHub teile.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Open Source</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Code</span>
+                    </div>
+                    <a href="https://github.com/gimsech" target="_blank" class="text-primary hover:underline">
+                        GitHub besuchen →
+                    </a>
+                </div>
+
+                <!-- Blog Project -->
+                <div class="bg-gray-50 rounded-lg p-8 hover:shadow-md transition-shadow">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">gimsech.de</h3>
+                    <p class="text-gray-600 mb-6">
+                        Mein persönlicher Blog, in dem ich über Technologie, Marketing und Design schreibe.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">WordPress</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Blog</span>
+                    </div>
+                    <a href="https://gimsech.de/portfolio/" target="_blank" class="text-primary hover:underline">
+                        Portfolio ansehen →
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold mb-8 text-white">Get In Touch</h2>
-                <p class="text-xl text-gray-300 mb-12">
-                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about tech.
-                </p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <a href="https://github.com/gimsech" target="_blank" class="bg-gray-900 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-gray-900">Kontakt</h2>
+            <p class="text-xl text-gray-600 mb-12">
+                Interesse an einem Austausch? Ich freue mich über neue Kontakte und spannende Projekte.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <a href="https://github.com/gimsech" target="_blank" class="bg-white p-6 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
                         </svg>
-                        <h3 class="text-lg font-bold text-white mb-2">GitHub</h3>
-                        <p class="text-gray-300">Check out my code</p>
-                    </a>
-                    
-                    <a href="mailto:hello@gimsech.dev" class="bg-gray-900 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <svg class="w-12 h-12 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                        <h3 class="text-lg font-bold text-white mb-2">Email</h3>
-                        <p class="text-gray-300">Drop me a line</p>
-                    </a>
-                    
-                    <a href="https://linkedin.com/in/gimsech" target="_blank" class="bg-gray-900 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <svg class="w-12 h-12 text-blue-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">GitHub</h3>
+                    <p class="text-gray-600 text-sm">Code & Projekte</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/gimsech/" target="_blank" class="bg-white p-6 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
                         </svg>
-                        <h3 class="text-lg font-bold text-white mb-2">LinkedIn</h3>
-                        <p class="text-gray-300">Connect professionally</p>
-                    </a>
-                </div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">LinkedIn</h3>
+                    <p class="text-gray-600 text-sm">Berufliches Netzwerk</p>
+                </a>
+
+                <a href="https://twitter.com/gimsech" target="_blank" class="bg-white p-6 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-400 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Twitter</h3>
+                    <p class="text-gray-600 text-sm">Gedanken & Updates</p>
+                </a>
+
+                <a href="mailto:contact@gimsech.de" class="bg-white p-6 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">E-Mail</h3>
+                    <p class="text-gray-600 text-sm">Direkter Kontakt</p>
+                </a>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <p class="text-gray-400">
-                    &copy; 2024 gimsech. Made with ❤️ and lots of ☕
-                </p>
+    <footer class="bg-white border-t border-gray-100 py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-gray-600 mb-4">
+                copyright <a href="https://gimsech.de/ueber-mich/" target="_blank" class="text-primary hover:underline">philipp süß</a>
+            </p>
+            <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                <a href="https://gimsech.de/impressum/" target="_blank" class="hover:text-gray-700">Impressum</a>
+                <a href="https://gimsech.de/datenschutz/" target="_blank" class="hover:text-gray-700">Datenschutz</a>
+                <a href="https://gimsech.de/release/" target="_blank" class="hover:text-gray-700">Release Notes</a>
             </div>
         </div>
     </footer>
@@ -282,12 +379,10 @@
 
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', function() {
-                // Mobile menu functionality can be added here
                 console.log('Mobile menu clicked');
+                // Mobile menu functionality can be added here
             });
         }
     </script>
