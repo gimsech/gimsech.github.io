@@ -10,6 +10,7 @@
 <meta property="og:url" content="https://phil.psue.de/">
 <meta property="og:title" content="Philipp Süß · Marketing Lead">
 <meta property="og:description" content="Marketing Lead, der KI-Workflows nicht nur einkauft, sondern selbst baut.">
+<meta property="og:image" content="https://phil.psue.de/philipp-suess.jpg">
 <meta name="theme-color" content="#10282D">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2310282D'/%3E%3Crect x='12' y='46' width='22' height='5' fill='%232A9D8F'/%3E%3Ctext x='12' y='40' font-family='Georgia,serif' font-weight='700' font-size='30' fill='%23fff'%3EPS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +60,13 @@ section{scroll-margin-top:16px}
 .lang button{font:600 13px/1 var(--sans);letter-spacing:.08em;background:transparent;color:var(--on-dark-2);border:0;min-width:44px;min-height:36px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--teal-soft);color:var(--night)}
 @media (max-width:760px){.nav-links .nav-item{display:none}}
-.hero{padding-block:88px 104px;display:flex;flex-direction:column;gap:28px}
+.hero{padding-block:72px 96px;display:flex;flex-wrap:wrap;align-items:center;gap:56px 64px}
+.hero-text{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.portrait{flex:1 1 280px;max-width:400px;margin:0 0 0 auto;position:relative}
+.portrait::before{content:"";position:absolute;inset:20px -20px -20px 20px;border:2px solid var(--teal-bright)}
+.portrait img{position:relative;display:block;width:100%;height:auto;aspect-ratio:800/959;object-fit:cover}
+@media (max-width:860px){.portrait{order:-1;margin:0;max-width:300px}.hero{gap:48px}}
+@media (max-width:600px){.portrait{max-width:240px}.portrait::before{inset:14px -14px -14px 14px}}
 .hero .eyebrow{color:var(--teal-soft)}
 .hero h1{font-size:clamp(46px,7vw,96px);line-height:1.02;max-width:14ch}
 .bar{width:96px;height:8px;background:var(--teal-bright)}
@@ -230,6 +237,7 @@ section{scroll-margin-top:16px}
       </div>
     </nav>
     <div class="hero" id="top">
+      <div class="hero-text">
       <p class="eyebrow" data-i18n="heroEyebrow">Marketing Lead · KI-Workflows · Berlin</p>
       <h1 data-i18n="heroTitle">Generalist aus Überzeugung.</h1>
       <div class="bar" aria-hidden="true"></div>
@@ -238,6 +246,8 @@ section{scroll-margin-top:16px}
         <a class="btn btn-solid" href="#projekte" data-i18n="ctaProjects">Projekte ansehen</a>
         <a class="btn btn-line" href="#kontakt" data-i18n="ctaContact">Kontakt aufnehmen</a>
       </div>
+      </div>
+      <figure class="portrait"><img src="philipp-suess.jpg" width="800" height="959" alt="Porträt von Philipp Süß" data-i18n-alt="photoAlt" fetchpriority="high"></figure>
     </div>
   </div>
 </header>
@@ -524,7 +534,7 @@ section{scroll-margin-top:16px}
 <script>
 (function () {
   var EN = {
-    skip: 'Skip to content',
+    skip: 'Skip to content', photoAlt: 'Portrait of Philipp Süß',
     navLabel: 'Main navigation', langLabel: 'Language', pathLabel: 'Positions',
     navProjects: 'Projects', navCareer: 'Experience', navSkills: 'Expertise', navRefs: 'References', navContact: 'Contact',
     heroEyebrow: 'Marketing Lead · AI workflows · Berlin',
@@ -602,9 +612,11 @@ section{scroll-margin-top:16px}
   };
   var textEls = document.querySelectorAll('[data-i18n]');
   var ariaEls = document.querySelectorAll('[data-i18n-aria]');
+  var altEls = document.querySelectorAll('[data-i18n-alt]');
   var DE = {};
   textEls.forEach(function (el) { if (!(el.dataset.i18n in DE)) DE[el.dataset.i18n] = el.innerHTML; });
   ariaEls.forEach(function (el) { DE[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
+  altEls.forEach(function (el) { DE[el.dataset.i18nAlt] = el.alt; });
 
   function apply(lang) {
     var dict = lang === 'en' ? EN : DE;
@@ -615,6 +627,10 @@ section{scroll-margin-top:16px}
     ariaEls.forEach(function (el) {
       var v = dict[el.dataset.i18nAria];
       if (v != null) el.setAttribute('aria-label', v);
+    });
+    altEls.forEach(function (el) {
+      var v = dict[el.dataset.i18nAlt];
+      if (v != null) el.alt = v;
     });
     document.documentElement.lang = lang;
     document.querySelector('meta[name="description"]').content = META[lang];
