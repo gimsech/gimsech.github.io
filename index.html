@@ -179,6 +179,9 @@ section{scroll-margin-top:16px}
 .cert-small .k{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-soft)}
 .cert-small b{font-family:var(--slab);font-weight:700;font-size:22px;line-height:1.2}
 .cert-small span{font-size:14px;color:var(--on-dark-3)}
+a.cert-small{color:#fff;text-decoration:none;transition:border-color .15s,background .15s}
+a.cert-small:hover{border-color:var(--teal-soft);background:var(--night-2);color:#fff}
+.cert-small .go{color:var(--teal-soft);font-weight:600;white-space:nowrap}
 @media (max-width:600px){.cert-feature{padding:24px 18px}}
 
 /* References */
@@ -481,7 +484,7 @@ section{scroll-margin-top:16px}
         </ul>
       </div>
       <div class="cert-row">
-        <div class="cert-small"><span class="k" data-i18n="kLang">Sprache</span><b>EF SET English · C2</b><span>79/100 · 2019</span></div>
+        <a class="cert-small is-link" href="https://cert.efset.org/xea7aK" target="_blank" rel="noopener"><span class="k" data-i18n="kLang">Sprache</span><b>EF SET English · C2</b><span><span>79/100 · 2019</span> <span class="go" data-i18n="viewCert">Zertifikat ansehen ↗</span></span></a>
         <div class="cert-small"><span class="k" data-i18n="kTraining">Weiterbildung</span><b data-i18n="haufe">Überzeugen mit Persönlichkeit</b><span>Haufe Akademie · 2022</span></div>
         <div class="cert-small"><span class="k" data-i18n="kAward">Auszeichnung</span><b data-i18n="award">1. Platz „Bestes Konzept“</b><span>Werbekongress Berlin · 2011</span></div>
       </div>
@@ -513,7 +516,7 @@ section{scroll-margin-top:16px}
           <figcaption class="who"><span class="av" aria-hidden="true">IK</span><div><b>Isabell Katzmarek</b><span data-i18n="q4">Google-Ads-Expertenagentur, Agenturpartnerin von close2real · März 2019</span></div></figcaption>
         </figure>
       </div>
-      <p class="more"><a href="https://www.linkedin.com/in/philippsuess/details/recommendations/" data-i18n="moreRefs">Alle Empfehlungen auf LinkedIn ansehen →</a></p>
+      <p class="more"><a href="https://www.linkedin.com/in/philippsuess/details/recommendations/" data-i18n="moreRefs" target="_blank" rel="noopener">Alle Empfehlungen auf LinkedIn ansehen →</a></p>
     </div>
   </section>
 </main>
@@ -523,9 +526,9 @@ section{scroll-margin-top:16px}
     <h2 data-i18n="hContact">Marketing, Operations und KI zusammenbringen?</h2>
     <p data-i18n="contactText">Mich interessieren Rollen, in denen Marketing, Operations und KI zusammenkommen. Schreib mir am liebsten direkt auf LinkedIn.</p>
     <div class="actions">
-      <a class="btn btn-solid" href="https://www.linkedin.com/in/philippsuess/"><svg aria-hidden="true"><use href="#in"/></svg><span data-i18n="ctaLinkedIn">Nachricht auf LinkedIn</span></a>
-      <a class="btn btn-line" href="https://www.xing.com/profile/Philipp_Suess2">XING</a>
-      <a class="btn btn-line" href="https://github.com/gimsech">GitHub</a>
+      <a class="btn btn-solid" href="https://www.linkedin.com/in/philippsuess/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#in"/></svg><span data-i18n="ctaLinkedIn">Nachricht auf LinkedIn</span></a>
+      <a class="btn btn-line" href="https://www.xing.com/profile/Philipp_Suess2" target="_blank" rel="noopener">XING</a>
+      <a class="btn btn-line" href="https://github.com/gimsech" target="_blank" rel="noopener">GitHub</a>
     </div>
     <div class="legal">© 2026 Philipp Süß · Berlin</div>
   </div>
@@ -592,7 +595,7 @@ section{scroll-margin-top:16px}
     hCerts: 'Certificates &amp; award',
     aaTitle: '6 courses on Claude &amp; AI',
     aaText: 'Official Anthropic courses, completed with a certificate. They cover exactly the stack I work with every day.',
-    cert: 'Certificate',
+    cert: 'Certificate', viewCert: 'View certificate ↗',
     kLang: 'Language', kTraining: 'Training', kAward: 'Award',
     haufe: 'Persuading with Personality', award: '1st place, “Best Concept”',
     hRefs: 'References',
