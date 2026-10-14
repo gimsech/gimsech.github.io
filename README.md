@@ -1,50 +1,18 @@
-# gimsech.github.io
+# phil.psue.de
 
-Personal GitHub Pages website for gimsech.
+Persönliche Website von Philipp Süß, Marketing Lead in Berlin.
+Live unter [phil.psue.de](https://phil.psue.de/) (GitHub Pages, Custom Domain über `CNAME`).
 
-## Features
+## Aufbau
 
-- Modern, responsive design
-- Built with Tailwind CSS
-- Smooth scrolling navigation
-- Mobile-friendly
-- GitHub integration
+- Eine einzige `index.html`, ohne Build-Schritt und ohne Framework
+- Schriften: Zilla Slab und Public Sans über Google Fonts
+- Zweisprachig: Deutsch steht im HTML, Englisch im Wörterbuch `EN` im Skript am Ende der Datei.
+  Jedes übersetzte Element trägt ein `data-i18n`-Attribut mit seinem Schlüssel.
+- Sprache: `?lang=en` bzw. `?lang=de`, sonst die zuletzt gewählte, sonst die Browsersprache
 
-## Sections
+## Inhalte ändern
 
-- **Home**: Hero section with introduction
-- **About**: Information about skills and experience
-- **Projects**: Showcase of featured projects
-- **Contact**: Ways to get in touch
-
-## Tech Stack
-
-- HTML5
-- Tailwind CSS (via CDN)
-- Vanilla JavaScript
-- GitHub Pages
-
-## Live Site
-
-The site is automatically deployed to: [https://gimsech.github.io](https://gimsech.github.io)
-
-## Customisation
-
-To customise the site:
-
-1. Edit the content in `index.html`
-2. Update project information in the Projects section
-3. Modify contact information and social links
-4. Add your own projects and experiences
-
-## Local Development
-
-To run locally:
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Make changes and refresh to see updates
-
-## Contributing
-
-Feel free to fork this repository and use it as a template for your own GitHub Pages site!
+1. Deutschen Text direkt in `index.html` ändern
+2. Den passenden englischen Text unter demselben Schlüssel im `EN`-Objekt anpassen
+3. Lokal ansehen: `python3 -m http.server` im Ordner starten und `http://localhost:8000` öffnen
