@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Zilla+Slab:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --night:#10282D; --night-2:#1B3D43; --line-dark:#24464C;
+  --night:#10282D; --night-2:#1B3D43; --line-dark:#2B5057;
   --teal:#0F6B6B; --teal-bright:#2A9D8F; --teal-soft:#7CC7BD;
   --mint:#E8F1EF; --mist:#F3F7F6; --rule:#C5D3D0;
   --ink:#16201F; --ink-2:#33413F; --muted:#4A5A58;
@@ -30,17 +30,23 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
-img{max-width:100%}
 a{color:var(--teal)}
 a:hover{color:#0A4F4F}
 :focus-visible{outline:3px solid var(--teal-bright);outline-offset:3px}
-h1,h2,h3{font-family:var(--slab);font-weight:700;line-height:1.1;margin:0}
+h1,h2,h3,h4{font-family:var(--slab);font-weight:700;line-height:1.15;margin:0}
 p{margin:0}
-.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:32px}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:32px}
 @media (max-width:600px){.wrap{padding-inline:16px}}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
 .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ink);padding:12px 16px;z-index:10}
 .skip:focus{left:16px;top:16px}
+section{scroll-margin-top:16px}
+.block{padding-block:88px}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(34px,4vw,44px)}
+.sec-head p{color:var(--muted);max-width:60ch}
+.dark .sec-head p{color:var(--on-dark-3)}
 
 /* Header */
 .site-head{background:var(--night);color:#fff}
@@ -52,55 +58,52 @@ p{margin:0}
 .lang{display:inline-flex;border:1.5px solid var(--teal-soft)}
 .lang button{font:600 13px/1 var(--sans);letter-spacing:.08em;background:transparent;color:var(--on-dark-2);border:0;min-width:44px;min-height:36px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--teal-soft);color:var(--night)}
-@media (max-width:720px){.nav-links .nav-item{display:none}}
-
+@media (max-width:760px){.nav-links .nav-item{display:none}}
 .hero{padding-block:88px 104px;display:flex;flex-direction:column;gap:28px}
 .hero .eyebrow{color:var(--teal-soft)}
 .hero h1{font-size:clamp(46px,7vw,96px);line-height:1.02;max-width:14ch}
 .bar{width:96px;height:8px;background:var(--teal-bright)}
 .lead{font-family:var(--slab);font-weight:500;font-size:clamp(20px,2.2vw,28px);line-height:1.4;color:var(--on-dark);max-width:36ch}
 .actions{display:flex;flex-wrap:wrap;gap:16px;padding-top:8px}
-.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 28px;font-weight:600;text-decoration:none;border:1.5px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 28px;font-weight:600;text-decoration:none;border:1.5px solid transparent}
+.btn svg{width:18px;height:18px;flex:none}
 .btn-solid{background:var(--teal-bright);color:#0B1F22}
 .btn-solid:hover{background:var(--teal-soft);color:#0B1F22}
 .btn-line{border-color:var(--teal-soft);color:#fff}
 .btn-line:hover{background:var(--night-2);color:#fff}
 
-/* Phases */
+/* Phases: centered steps on a line */
 .phases{background:var(--teal);color:#fff}
-.phases ol{list-style:none;margin:0;padding-block:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:28px 32px}
-.phases .k{font-size:13px;color:var(--on-dark-2)}
-.phases .t{font-family:var(--slab);font-weight:700;font-size:32px;line-height:1.15}
-.phases .d{font-size:15px;color:#E3EFED}
+.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-block:48px;position:relative;text-align:center}
+.steps4::before{content:"";position:absolute;top:66px;left:12.5%;right:12.5%;height:2px;background:rgba(255,255,255,.35)}
+.steps4 li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding-inline:12px}
+.steps4 .dot{width:38px;height:38px;border-radius:50%;background:var(--night);border:2px solid var(--teal-soft);display:grid;place-items:center;font-size:13px;font-weight:600;color:#fff;margin-bottom:10px}
+.steps4 li:last-child .dot{background:var(--teal-soft);color:var(--night);border-color:var(--teal-soft)}
+.steps4 .t{font-family:var(--slab);font-weight:700;font-size:32px;line-height:1.1}
+.steps4 .k{font-size:14px;color:var(--on-dark-2)}
+.steps4 .d{font-size:15px;color:#E3EFED;max-width:22ch}
+@media (max-width:760px){
+  .steps4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}
+  .steps4::before{display:none}
+}
 
 /* Numbers */
-.numbers{padding-block:96px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px}
+.numbers{padding-block:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px}
 .num{border-top:2px solid var(--ink);padding-top:20px;display:flex;flex-direction:column;gap:6px}
 .num b{font-family:var(--slab);font-weight:700;font-size:56px;line-height:1;color:var(--teal)}
 
-/* Sections */
-section{scroll-margin-top:16px}
-.block{padding-block:72px}
-.block > h2,.split > h2{font-size:clamp(34px,4vw,44px)}
-.split{display:flex;flex-wrap:wrap;gap:32px 48px}
-.split > h2{flex:1 1 240px}
-.split > .body{flex:999 1 560px;min-width:0}
-
 /* Cases */
-.cases{display:flex;flex-direction:column;gap:32px;margin-top:40px}
+.cases{display:flex;flex-direction:column;gap:32px}
 .case-main{background:var(--night);color:#fff;display:flex;flex-wrap:wrap}
 .case-main .text{flex:999 1 520px;min-width:0;padding:48px;display:flex;flex-direction:column;gap:20px}
 .case-main .eyebrow{color:var(--teal-soft)}
 .case-main h3{font-size:clamp(28px,3vw,38px)}
-.case-main p,.case-main li{color:var(--on-dark)}
-.case-main ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.case-main p{color:var(--on-dark)}
+.bullets{padding-left:20px;list-style:disc;display:flex;flex-direction:column;gap:6px}
+.case-main .bullets li{color:var(--on-dark)}
 .case-main .facts{flex:1 1 340px;background:var(--teal);padding:48px;display:flex;flex-direction:column;justify-content:center;gap:28px}
 .case-main .facts b{display:block;font-family:var(--slab);font-weight:700;font-size:clamp(30px,3vw,38px);line-height:1.1}
 .case-main .facts span{font-size:15px;color:#E3EFED}
-.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.case-main .tags{flex-direction:row;padding-left:0;gap:8px}
-.tags li{padding:6px 12px;background:var(--night-2);font-size:14px;color:#fff}
-.case-quote{border-left:0;margin:0;font-family:var(--slab);font-weight:500;font-size:20px;color:#fff}
 @media (max-width:600px){.case-main .text,.case-main .facts{padding:28px 20px}}
 .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
 .card{background:var(--mint);padding:36px;display:flex;flex-direction:column;gap:12px}
@@ -110,48 +113,105 @@ section{scroll-margin-top:16px}
 .card .meta{margin-top:auto;padding-top:12px;font-size:14px;color:var(--muted)}
 @media (max-width:600px){.card{padding:24px 20px}}
 
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;min-height:34px;padding:4px 14px;font-size:15px;line-height:1.3;background:#fff;border:1px solid var(--rule);color:var(--ink)}
+.tag.solid{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:500}
+.tag.dark{background:var(--night-2);border-color:var(--night-2);color:#fff;font-size:14px;min-height:30px}
+
 /* Timeline */
 .tl-wrap{background:var(--mist)}
-.tl{list-style:none;margin:0;padding:0}
-.tl > li{display:flex;flex-wrap:wrap;gap:8px 32px;padding-block:26px;border-top:1px solid var(--rule)}
-.tl > li:last-child{border-bottom:1px solid var(--rule)}
-.tl .when{flex:0 0 170px;font-size:15px;color:var(--muted)}
-.tl .what{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:6px}
-.tl h3{font-size:22px}
-.tl .org{font-size:15px;color:var(--muted)}
-.tl .what p{color:var(--ink-2);font-size:16px}
-.steps{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:4px 0 0;padding:0;font-size:14px}
-.steps li{background:#fff;border:1px solid var(--rule);padding:4px 10px}
-.earlier{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;font-size:15px;color:var(--ink-2)}
-.earlier b{display:block;color:var(--ink);font-weight:600}
+.tl{position:relative;display:flex;flex-direction:column;gap:56px;padding-left:40px}
+.tl::before{content:"";position:absolute;left:9px;top:12px;bottom:12px;width:2px;background:var(--teal)}
+.tl > li{position:relative}
+.tl > li::before{content:"";position:absolute;left:-40px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px var(--mist)}
+.co{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px}
+.co h3{font-size:clamp(24px,2.6vw,30px)}
+.co .loc{font-family:var(--sans);font-weight:400;font-size:15px;color:var(--muted);margin-left:8px}
+.date{font-size:15px;color:var(--muted);white-space:nowrap}
+.chip{display:inline-block;font-size:13px;font-weight:600;background:#fff;border:1px solid var(--rule);padding:2px 10px;margin-left:8px;color:var(--ink)}
+.co-sub{font-size:15px;color:var(--muted);margin-top:4px}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:16px;font-size:14px}
+.path li{background:#fff;border:1px solid var(--rule);padding:4px 12px}
+.path li b{font-weight:600}
+.path .arr{background:none;border:0;padding:0;color:var(--teal)}
+.roles{display:flex;flex-direction:column;gap:20px;margin-top:24px}
+.role{background:#fff;border:1px solid #DCE5E3;padding:28px}
+.role-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:14px}
+.role-head h4{font-size:22px}
+.role .bullets{gap:8px;color:var(--ink-2);font-size:16px}
+.role .bullets li::marker{color:var(--teal)}
+.single .bullets{margin-top:16px;color:var(--ink-2);font-size:16px;gap:8px}
+.single .bullets li::marker{color:var(--teal)}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
+.mini > div{background:#fff;border:1px solid #DCE5E3;padding:18px 20px;font-size:15px;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+.mini b{color:var(--ink);font-weight:600;font-size:16px}
+@media (max-width:600px){.tl{padding-left:32px}.tl > li::before{left:-32px}.tl::before{left:9px}.role{padding:20px}}
 
 /* Skills */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
-.skills h3{font-size:22px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
-.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:16px;color:var(--ink-2)}
-.skills .sub{color:var(--muted);font-size:14px}
+.skill-groups{display:flex;flex-direction:column;gap:40px}
+.focus .tags{gap:10px}
+.focus .tag{font-size:16px;min-height:42px;padding:6px 18px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px 40px}
+.tool-grid h3,.group-h{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
 
-/* Quotes */
-.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;margin-top:40px}
-.quotes figure{margin:0;display:flex;flex-direction:column;gap:16px}
-.quotes blockquote{margin:0;font-family:var(--slab);font-weight:500;font-size:22px;line-height:1.4}
-.quotes figure.big{grid-column:1/-1}
-.quotes figure.big blockquote{font-size:clamp(24px,3vw,34px);line-height:1.3;max-width:40ch}
-.quotes figcaption{font-size:15px;color:var(--muted)}
-.quotes figcaption b{color:var(--ink);font-weight:600}
-.more{margin-top:40px}
+/* Certificates */
+.certs{background:var(--night);color:#fff}
+.cert-feature{display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start;border:1px solid var(--line-dark);padding:40px;background:var(--night-2)}
+.cert-feature .intro{flex:1 1 260px;display:flex;flex-direction:column;gap:12px}
+.cert-feature .intro .eyebrow{color:var(--teal-soft)}
+.cert-feature h3{font-size:32px}
+.cert-feature .intro p{color:var(--on-dark)}
+.badges{flex:999 1 560px;min-width:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.badge{display:flex;gap:14px;align-items:center;background:var(--night);border:1px solid var(--line-dark);padding:16px;min-height:84px}
+.badge svg{width:44px;height:44px;flex:none}
+.badge b{display:block;font-weight:600;font-size:15px;line-height:1.35}
+.badge span{font-size:13px;color:var(--on-dark-3)}
+.cert-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
+.cert-small{display:flex;flex-direction:column;justify-content:space-between;gap:6px;border:1px solid var(--line-dark);padding:24px;min-height:128px}
+.cert-small .k{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-soft)}
+.cert-small b{font-family:var(--slab);font-weight:700;font-size:22px;line-height:1.2}
+.cert-small span{font-size:14px;color:var(--on-dark-3)}
+@media (max-width:600px){.cert-feature{padding:24px 18px}}
+
+/* References */
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
+@media (max-width:420px){.refs{grid-template-columns:1fr}}
+.ref{margin:0;position:relative;background:#fff;border-top:6px solid var(--teal);box-shadow:0 1px 0 var(--rule),0 18px 40px -24px rgba(16,40,45,.35);padding:44px 36px 32px;display:flex;flex-direction:column;gap:24px}
+.ref::before{content:"“";position:absolute;top:-6px;right:28px;font-family:var(--slab);font-weight:700;font-size:120px;line-height:1;color:var(--mint)}
+.ref blockquote{position:relative;margin:0;font-family:var(--slab);font-weight:500;font-size:19px;line-height:1.55;color:var(--ink)}
+.ref.feature{grid-column:1/-1;background:var(--night);border-top-color:var(--teal-bright)}
+.ref.feature::before{color:var(--night-2)}
+.ref.feature blockquote{color:#fff;font-size:clamp(19px,1.8vw,22px)}
+.ref.feature .who b{color:#fff}
+.ref.feature .who div span{color:var(--on-dark-3)}
+.ref.feature .av{background:var(--teal-bright);color:var(--night)}
+.who{margin-top:auto;display:flex;align-items:center;gap:16px;padding-top:20px;border-top:1px solid var(--rule)}
+.ref.feature .who{border-top-color:var(--line-dark)}
+.av{width:52px;height:52px;flex:none;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:600;font-size:17px;letter-spacing:.04em}
+.who b{display:block;font-size:17px;color:var(--ink)}
+.who div span{display:block;font-size:14px;color:var(--muted);line-height:1.45}
+@media (max-width:600px){.ref{padding:36px 20px 24px}}
+.more{margin-top:36px}
 
 /* Footer */
 .site-foot{background:var(--night);color:#fff}
-.site-foot .inner{padding-block:96px 40px;display:flex;flex-direction:column;gap:32px}
+.site-foot .inner{padding-block:96px 40px;display:flex;flex-direction:column;gap:28px}
 .site-foot h2{font-size:clamp(34px,5vw,64px);line-height:1.05;max-width:18ch}
 .site-foot p{color:var(--on-dark);max-width:52ch}
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--on-dark-3);padding-top:32px;margin-top:24px;border-top:1px solid var(--line-dark)}
-.legal a{color:var(--on-dark-3)}
+.legal{font-size:14px;color:var(--on-dark-3);padding-top:32px;margin-top:24px;border-top:1px solid var(--line-dark)}
 </style>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="seal" viewBox="0 0 48 48">
+    <path d="M24 3l4.6 3.4 5.7-.3 2.1 5.3 4.9 2.9-1 5.6 2.6 5.1-3.6 4.4-.2 5.7-5.4 1.8-3.3 4.7-5.5-1.3-5.5 1.3-3.3-4.7-5.4-1.8-.2-5.7L5.9 24l2.6-5.1-1-5.6 4.9-2.9 2.1-5.3 5.7.3z" fill="#0F6B6B" stroke="#7CC7BD" stroke-width="1.5"/>
+    <path d="M16.5 24.5l5 5 10-10.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="in" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+</svg>
 
 <header class="site-head">
   <div class="wrap">
@@ -184,11 +244,11 @@ section{scroll-margin-top:16px}
 
 <main id="main">
   <div class="phases">
-    <ol class="wrap">
-      <li><div class="k" data-i18n="p1k">01 · seit 2006</div><div class="t">Design</div><div class="d" data-i18n="p1d">Mediendesign, UX, Art Direction</div></li>
-      <li><div class="k" data-i18n="p2k">02 · seit 2013</div><div class="t">Marketing</div><div class="d" data-i18n="p2d">Marken, Kampagnen, Go-to-Market</div></li>
-      <li><div class="k" data-i18n="p3k">03 · seit 2019</div><div class="t" data-i18n="p3t">Daten</div><div class="d" data-i18n="p3d">KPIs, Tracking, A/B-Tests, BI</div></li>
-      <li><div class="k" data-i18n="p4k">04 · heute</div><div class="t" data-i18n="p4t">KI</div><div class="d" data-i18n="p4d">Automatisierung und eigene Tools</div></li>
+    <ol class="wrap steps4">
+      <li><span class="dot" aria-hidden="true">01</span><span class="t">Design</span><span class="k" data-i18n="p1k">seit 2006</span><span class="d" data-i18n="p1d">Mediendesign, UX, Art Direction</span></li>
+      <li><span class="dot" aria-hidden="true">02</span><span class="t">Marketing</span><span class="k" data-i18n="p2k">seit 2013</span><span class="d" data-i18n="p2d">Marken, Kampagnen, Go-to-Market</span></li>
+      <li><span class="dot" aria-hidden="true">03</span><span class="t" data-i18n="p3t">Daten</span><span class="k" data-i18n="p3k">seit 2019</span><span class="d" data-i18n="p3d">KPIs, Tracking, A/B-Tests, BI</span></li>
+      <li><span class="dot" aria-hidden="true">04</span><span class="t" data-i18n="p4t">KI</span><span class="k" data-i18n="p4k">heute</span><span class="d" data-i18n="p4d">Automatisierung und eigene Tools</span></li>
     </ol>
   </div>
 
@@ -199,22 +259,23 @@ section{scroll-margin-top:16px}
     <div class="num"><b>13+</b><span data-i18n="n4">Jahre B2B-Marketing und digitale Kommunikation</span></div>
   </div>
 
+  <!-- Projekte -->
   <section id="projekte" class="wrap block" aria-labelledby="h-projects">
-    <h2 id="h-projects" data-i18n="hProjects">Projekte</h2>
+    <div class="sec-head"><h2 id="h-projects" data-i18n="hProjects">Projekte</h2></div>
     <div class="cases">
       <article class="case-main">
         <div class="text">
           <p class="eyebrow">Case Study · GAMOMAT · 2026</p>
           <h3 data-i18n="hubTitle">Marketing Hub: eine Schaltzentrale statt vieler Einzeltools</h3>
           <p data-i18n="hubText">GAMOMAT bringt rund zwei neue Spiele pro Monat auf den Markt. Für jedes Release braucht das Team Assets, Texte, Partnerkommunikation, Newsletter und Dokumentation, verteilt auf viele Tools. Statt ein weiteres Standard-Tool einzukaufen, habe ich die echten Abläufe des Teams aufgenommen und daraus ein eigenes, KI-gestütztes System gebaut.</p>
-          <ul data-i18n="hubList">
+          <ul class="bullets" data-i18n="hubList">
             <li>Bündelt die wiederkehrenden Marketing-Abläufe in einer Oberfläche</li>
             <li>Verbindet bestehende Systeme über API- und Webhook-Integrationen</li>
             <li>Nutzt KI-Workflows für Text, Bild, Video und Recherche</li>
             <li>Standardisiert Abläufe, sodass Ergebnisse gleich gut sind, egal wer sie erledigt</li>
           </ul>
           <ul class="tags" aria-label="Stack">
-            <li>Claude Code</li><li>n8n</li><li>Supabase</li><li>AWS S3</li>
+            <li class="tag dark">Claude Code</li><li class="tag dark">n8n</li><li class="tag dark">Supabase</li><li class="tag dark">AWS S3</li>
           </ul>
         </div>
         <div class="facts">
@@ -246,127 +307,203 @@ section{scroll-margin-top:16px}
     </div>
   </section>
 
+  <!-- Werdegang -->
   <section id="werdegang" class="tl-wrap" aria-labelledby="h-career">
-    <div class="wrap block split">
-      <h2 id="h-career" data-i18n="hCareer">Werdegang</h2>
-      <div class="body">
-        <ol class="tl">
-          <li>
-            <div class="when" data-i18n="t1w">05/2020 – heute</div>
-            <div class="what">
-              <h3>GAMOMAT Development GmbH</h3>
-              <div class="org" data-i18n="t1o">Berlin · Entwickler von Online-Slots für regulierte Märkte</div>
-              <ul class="steps" aria-label="Positionen" data-i18n-aria="stepsLabel">
-                <li>Marketing Manager 2020</li><li>Senior Marketing Manager 2022</li><li>Marketing Lead 2024</li>
+    <div class="wrap block">
+      <div class="sec-head"><h2 id="h-career" data-i18n="hCareer">Werdegang</h2></div>
+      <ol class="tl">
+        <li>
+          <div class="co">
+            <h3>GAMOMAT Development GmbH<span class="loc">Berlin</span></h3>
+            <span class="date"><span data-i18n="gmDate">05/2020 – heute</span></span>
+          </div>
+          <p class="co-sub" data-i18n="gmSub">Brand &amp; Design · Entwickler von Online-Slots für regulierte Märkte</p>
+          <ol class="path" aria-label="Positionen" data-i18n-aria="pathLabel">
+            <li><b>Marketing Manager</b> 2020</li><li class="arr" aria-hidden="true">→</li>
+            <li><b>Senior Marketing Manager</b> 2022</li><li class="arr" aria-hidden="true">→</li>
+            <li><b>Marketing Lead</b> 2024</li>
+          </ol>
+          <div class="roles">
+            <div class="role">
+              <div class="role-head"><h4>Marketing Lead</h4><span class="date"><span data-i18n="r1d">11/2024 – heute</span></span></div>
+              <ul class="bullets" data-i18n="r1">
+                <li>Fachliche Führung des Marketingteams: Priorisierung, Aufgabensteuerung, Coaching und Onboarding; Abstimmung mit Geschäftsführung, Produkt und Partnermanagement</li>
+                <li>Konzeption, Eigenentwicklung und Betrieb des Marketing Hubs: eine auf unsere Prozesse zugeschnittene Schaltzentrale statt vieler Einzeltools, mit API- und Webhook-Integrationen (n8n, Supabase, AWS S3). Aufgaben von einer Stunde dauern jetzt eine Minute, halbtägige fünf Minuten</li>
+                <li>Marketing AI-first aufgestellt: KI-Workflows mit Claude, OpenAI, Gemini und Higgsfield für Text, Bild, Video und Prozesse im Teamalltag verankert</li>
+                <li>Asset Management neu aufgebaut: AWS S3 mit automatischem Packaging; Marketing Automation und Newsletter von Mailchimp auf MailerLite migriert</li>
+                <li>Marketing für rund 24 Spiele-Releases pro Jahr; Konzeption und Umsetzung des Produkt-Launch-Events auf Malta (2025)</li>
+                <li>Partner-Promotions wie der GAMOMAT Cup mit gestaffelter Rabattstruktur auf GGR-Basis</li>
               </ul>
-              <p data-i18n="t1p">Fachliche Führung des Marketingteams, Marketing für rund 24 Releases pro Jahr, Produkt-Launch-Event auf Malta (2025), VIP- und Kundenevents in Berlin und Barcelona, internationale Messen wie ICE und SBC. Marketing AI-first aufgestellt mit Claude, OpenAI, Gemini und Higgsfield.</p>
             </div>
-          </li>
-          <li>
-            <div class="when">02/2019 – 04/2020</div>
-            <div class="what">
-              <h3>close2real GmbH</h3>
-              <div class="org" data-i18n="t2o">Berlin · Senior Online Marketing Manager</div>
-              <p data-i18n="t2p">Digitale Vermarktung einer E-Learning-Plattform für Ärzt:innen inklusive Budget und KPIs. Website-Relaunch mit neuem Tracking-Konzept, A/B- und multivariate Tests, Kernrolle bei der Einführung der E-Commerce-Plattform.</p>
+            <div class="role">
+              <div class="role-head"><h4>Senior Marketing Manager</h4><span class="date">01/2022 – 10/2024<span class="chip" data-i18n="r2dur">2 J. 10 Mon.</span></span></div>
+              <ul class="bullets" data-i18n="r2">
+                <li>Einführung der Client Area als Partner- und Sales-Enablement-Plattform mit Launch-Material, Assets und Produktinfos, gemeinsam mit IT und Produktmanagement; seither erweitert um Promo-Packs, Bonus-Buy-Benachrichtigungen und G-RGS-Integration</li>
+                <li>Employer Branding und Social Media: LinkedIn-Präsenz +400 %, Kununu-Bewertungen +60 %, jährliche Auszeichnung als „Top Company“</li>
+                <li>Interne Benchmarks und BI-Reports zu PR, LinkedIn und weiteren Aktivitäten eingeführt</li>
+                <li>VIP- und Kundenevents in Berlin und Barcelona sowie internationale Messen (u. a. ICE, SBC)</li>
+              </ul>
             </div>
-          </li>
-          <li>
-            <div class="when">07/2013 – 01/2019</div>
-            <div class="what">
-              <h3>medienimpuls GmbH</h3>
-              <div class="org" data-i18n="t3o">Wunsiedel · Creative Strategist &amp; Projektleiter</div>
-              <p data-i18n="t3p">360°-Konzepte, Kampagnen und Marken-Workshops für Kund:innen aus Industrie, Food und Lifestyle. Projektleitung, Key Account Management und Neukundenakquise.</p>
+            <div class="role">
+              <div class="role-head"><h4>Marketing Manager</h4><span class="date">05/2020 – 12/2021<span class="chip" data-i18n="r3dur">1 J. 8 Mon.</span></span></div>
+              <ul class="bullets" data-i18n="r3">
+                <li>Erste Marketingprozesse etabliert: Ticketsystem in Confluence, Dailies, abteilungsübergreifende Abstimmung</li>
+                <li>Neugestaltung zweier WordPress-Websites mit externer Agentur: Besucherzahlen +25 % seit 2021</li>
+                <li>Presse- und Kommunikationsmaßnahmen national und international; Präsentationen und Produktunterlagen für Sales</li>
+                <li>Mitentwicklung der Initiative „Gaming for the Climate“</li>
+              </ul>
             </div>
-          </li>
-          <li>
-            <div class="when">2009 – 2013</div>
-            <div class="what">
-              <h3 data-i18n="t4h">B.A. Mediendesign</h3>
-              <div class="org" data-i18n="t4o">Hochschule Hof, Campus Münchberg</div>
-              <p data-i18n="t4p">Schwerpunkt Service- und Interaction Design. Abschlussarbeit „Mensch, Video, Interaktion“.</p>
-            </div>
-          </li>
-        </ol>
-        <div class="earlier">
-          <div><b data-i18n="e1">Praktikum Interface Design</b>cloud – visual brand entertainment · 2012/13</div>
-          <div><b data-i18n="e2">Praktikum Eventplanung</b>newthinking communications · 2012</div>
-          <div><b data-i18n="e3">Werkstudent Content &amp; Social Media</b>VIEWENTO · 2010 – 2011</div>
-          <div><b data-i18n="e4">Gestaltungstechnischer Assistent</b><span data-i18n="e4s">Plauen · 2006 – 2009</span></div>
+          </div>
+        </li>
+
+        <li class="single">
+          <div class="co">
+            <h3>close2real GmbH<span class="loc">Berlin</span></h3>
+            <span class="date">02/2019 – 04/2020<span class="chip" data-i18n="c2rDur">1 J. 3 Mon.</span></span>
+          </div>
+          <p class="co-sub" data-i18n="c2rSub">Senior Online Marketing Manager · Digitale Fortbildung für Ärzt:innen</p>
+          <ul class="bullets" data-i18n="c2r">
+            <li>Digitale Vermarktung der E-Learning-Plattform inkl. Budget und KPI-Entwicklung; Arbeit mit Salesforce als CRM</li>
+            <li>Website-Relaunch mit neuem Tracking-Konzept; datengetriebene A/B- und multivariate Tests</li>
+            <li>Schnittstelle zur Entwicklung; Kernrolle bei der Einführung der E-Commerce-Plattform</li>
+          </ul>
+        </li>
+
+        <li class="single">
+          <div class="co">
+            <h3>medienimpuls GmbH<span class="loc">Wunsiedel</span></h3>
+            <span class="date">07/2013 – 01/2019<span class="chip" data-i18n="miDur">5 J. 7 Mon.</span></span>
+          </div>
+          <p class="co-sub" data-i18n="miSub">Creative Strategist &amp; Projektleiter · B2B/B2C-Kreativagentur</p>
+          <ul class="bullets" data-i18n="mi">
+            <li>360°-Konzepte, Kampagnen und Marken-Workshops für Kund:innen aus Industrie, Food und Lifestyle</li>
+            <li>Projektleitung und Key Account Management inkl. Angebote und Neukundenakquise</li>
+            <li>Google Ads, Social Media, Websites mit TYPO3, WordPress und Shopware; Anleitung von Azubis und Werkstudierenden</li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="co"><h3 data-i18n="hEarlier">Frühere Stationen</h3></div>
+          <div class="mini">
+            <div><b data-i18n="e1">Praktikum Interface Design</b>cloud – visual brand entertainment, Düsseldorf<span>12/2012 – 02/2013</span></div>
+            <div><b data-i18n="e2">Praktikum Eventplanung</b>newthinking communications, Berlin<span>09/2012 – 11/2012</span></div>
+            <div><b data-i18n="e3">Werkstudent Content &amp; Social Media</b>VIEWENTO GmbH, Bayreuth<span>02/2010 – 07/2011</span></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="co"><h3 data-i18n="hEdu">Ausbildung</h3></div>
+          <div class="mini">
+            <div><b data-i18n="edu1">B.A. Mediendesign</b><span data-i18n="edu1s">Hochschule Hof, Campus Münchberg</span><span>2009 – 2013</span></div>
+            <div><b data-i18n="edu2">Staatl. gepr. gestaltungstechnischer Assistent für Medien und Kommunikation</b><span>Plauen</span><span>2006 – 2009</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Kompetenzen -->
+  <section id="kompetenzen" class="wrap block" aria-labelledby="h-skills">
+    <div class="sec-head"><h2 id="h-skills" data-i18n="hSkills">Kompetenzen</h2></div>
+    <div class="skill-groups">
+      <div class="focus">
+        <h3 class="group-h" data-i18n="skFocus">Schwerpunkte</h3>
+        <ul class="tags" data-i18n="sk1">
+          <li class="tag solid">Marketing Operations</li>
+          <li class="tag solid">KI-Workflows &amp; Agenten (LLM, MCP)</li>
+          <li class="tag solid">Interne Tools &amp; Prototyping</li>
+          <li class="tag solid">Prozessdesign &amp; Dokumentation</li>
+          <li class="tag solid">KPI-Strukturen &amp; BI-Reporting</li>
+          <li class="tag solid">Produkt- &amp; Go-to-Market-Marketing</li>
+          <li class="tag solid">Marketingstrategie &amp; Positionierung</li>
+          <li class="tag solid">PR &amp; Employer Branding</li>
+          <li class="tag solid">Events &amp; Messen</li>
+          <li class="tag solid">Fachliche Teamführung</li>
+          <li class="tag solid">Stakeholder-Management</li>
+        </ul>
+      </div>
+      <div class="tool-grid">
+        <div>
+          <h3 data-i18n="tgAi">KI</h3>
+          <ul class="tags"><li class="tag">Claude</li><li class="tag">Claude Code</li><li class="tag">OpenAI</li><li class="tag">Gemini</li><li class="tag">Higgsfield</li></ul>
+        </div>
+        <div>
+          <h3 data-i18n="tgAuto">Automatisierung &amp; Daten</h3>
+          <ul class="tags"><li class="tag">n8n</li><li class="tag" data-i18n="mcp">MCP-Server</li><li class="tag">Supabase</li><li class="tag">Postgres</li><li class="tag">AWS S3</li></ul>
+        </div>
+        <div>
+          <h3 data-i18n="tgDev">Entwicklung &amp; Web</h3>
+          <ul class="tags"><li class="tag">Next.js</li><li class="tag">Python</li><li class="tag">PHP</li><li class="tag">WordPress</li></ul>
+        </div>
+        <div>
+          <h3 data-i18n="tgMkt">CRM &amp; Marketing Automation</h3>
+          <ul class="tags"><li class="tag">Salesforce</li><li class="tag">HubSpot</li><li class="tag">Pardot</li><li class="tag">Mailchimp</li><li class="tag">MailerLite</li><li class="tag">Google Analytics</li><li class="tag">Google Ads</li></ul>
+        </div>
+        <div>
+          <h3 data-i18n="tgCollab">Zusammenarbeit &amp; Design</h3>
+          <ul class="tags"><li class="tag">Confluence</li><li class="tag">Jira</li><li class="tag">Miro</li><li class="tag">Adobe CC</li><li class="tag">Figma</li></ul>
+        </div>
+        <div>
+          <h3 data-i18n="tgLang">Sprachen</h3>
+          <ul class="tags"><li class="tag" data-i18n="lang1">Deutsch · Muttersprache</li><li class="tag" data-i18n="lang2">Englisch · C2</li></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="kompetenzen" class="wrap block" aria-labelledby="h-skills">
-    <h2 id="h-skills" data-i18n="hSkills">Kompetenzen</h2>
-    <div class="skills" style="margin-top:40px">
-      <div>
-        <h3 data-i18n="sk1h">Schwerpunkte</h3>
-        <ul data-i18n="sk1">
-          <li>Marketing Operations</li>
-          <li>KI-Workflows &amp; Agenten (LLM, MCP)</li>
-          <li>Interne Tools &amp; Prototyping</li>
-          <li>Prozessdesign &amp; Dokumentation</li>
-          <li>KPI-Strukturen &amp; BI-Reporting</li>
-          <li>Produkt- &amp; Go-to-Market-Marketing</li>
-          <li>Fachliche Teamführung</li>
-          <li>Stakeholder-Management</li>
+  <!-- Zertifikate -->
+  <section id="zertifikate" class="certs dark" aria-labelledby="h-certs">
+    <div class="wrap block">
+      <div class="sec-head"><h2 id="h-certs" data-i18n="hCerts">Zertifikate &amp; Auszeichnung</h2></div>
+      <div class="cert-feature">
+        <div class="intro">
+          <p class="eyebrow">Anthropic Academy · 2026</p>
+          <h3 data-i18n="aaTitle">6 Kurse zu Claude &amp; KI</h3>
+          <p data-i18n="aaText">Offizielle Kurse von Anthropic, abgeschlossen mit Zertifikat. Sie decken genau den Stack ab, mit dem ich im Alltag arbeite.</p>
+        </div>
+        <ul class="badges">
+          <li class="badge"><svg aria-hidden="true"><use href="#seal"/></svg><div><b>Claude Code in Action</b><span data-i18n="cert">Zertifikat</span></div></li>
+          <li class="badge"><svg aria-hidden="true"><use href="#seal"/></svg><div><b>Introduction to Model Context Protocol</b><span data-i18n="cert">Zertifikat</span></div></li>
+          <li class="badge"><svg aria-hidden="true"><use href="#seal"/></svg><div><b>AI Fluency for Builders</b><span data-i18n="cert">Zertifikat</span></div></li>
+          <li class="badge"><svg aria-hidden="true"><use href="#seal"/></svg><div><b>AI Fluency: Framework &amp; Foundations</b><span data-i18n="cert">Zertifikat</span></div></li>
+          <li class="badge"><svg aria-hidden="true"><use href="#seal"/></svg><div><b>AI Capabilities and Limitations</b><span data-i18n="cert">Zertifikat</span></div></li>
+          <li class="badge"><svg aria-hidden="true"><use href="#seal"/></svg><div><b>AI Fluency for Creative Work</b><span data-i18n="cert">Zertifikat</span></div></li>
         </ul>
       </div>
-      <div>
-        <h3>Tools &amp; Tech</h3>
-        <ul>
-          <li>Claude · Claude Code · OpenAI · Gemini · Higgsfield</li>
-          <li data-i18n="tt2">n8n · MCP-Server</li>
-          <li>Supabase · Postgres · AWS S3</li>
-          <li>Next.js · Python · PHP · WordPress</li>
-          <li>Salesforce · HubSpot</li>
-          <li>Pardot · Mailchimp · MailerLite</li>
-          <li>Google Analytics &amp; Ads</li>
-          <li>Confluence · Jira · Miro · Adobe CC · Figma</li>
-        </ul>
-      </div>
-      <div>
-        <h3 data-i18n="sk3h">Zertifikate</h3>
-        <ul>
-          <li><span data-i18n="c1">Anthropic Academy 2026: Claude Code in Action, Introduction to Model Context Protocol, AI Fluency for Builders, AI Fluency: Framework &amp; Foundations, AI Capabilities and Limitations, AI Fluency for Creative Work</span></li>
-          <li><span data-i18n="c2">Überzeugen mit Persönlichkeit</span> <span class="sub">Haufe Akademie, 2022</span></li>
-          <li>EF SET English C2 <span class="sub">2019</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3 data-i18n="sk4h">Sprachen &amp; Auszeichnung</h3>
-        <ul>
-          <li><span data-i18n="l1">Deutsch</span> <span class="sub" data-i18n="l1s">Muttersprache</span></li>
-          <li><span data-i18n="l2">Englisch</span> <span class="sub">C2 · EF SET 79/100</span></li>
-          <li><span data-i18n="aw">Werbekongress Berlin 2011, 1. Platz „Bestes Konzept“</span></li>
-        </ul>
+      <div class="cert-row">
+        <div class="cert-small"><span class="k" data-i18n="kLang">Sprache</span><b>EF SET English · C2</b><span>79/100 · 2019</span></div>
+        <div class="cert-small"><span class="k" data-i18n="kTraining">Weiterbildung</span><b data-i18n="haufe">Überzeugen mit Persönlichkeit</b><span>Haufe Akademie · 2022</span></div>
+        <div class="cert-small"><span class="k" data-i18n="kAward">Auszeichnung</span><b data-i18n="award">1. Platz „Bestes Konzept“</b><span>Werbekongress Berlin · 2011</span></div>
       </div>
     </div>
   </section>
 
+  <!-- Empfehlungen -->
   <section id="empfehlungen" class="tl-wrap" aria-labelledby="h-refs">
     <div class="wrap block">
-      <h2 id="h-refs" data-i18n="hRefs">Empfehlungen</h2>
-      <div class="quotes">
-        <figure class="big">
-          <blockquote lang="en">“Philipp was an invaluable stakeholder representing the marketing department in our strategical roadmap planning and for different projects. […] His ability to bridge the gap between marketing and technology was truly impressive and contributed significantly to our project’s success.”</blockquote>
-          <figcaption><b>Sascha Perkowski</b> · <span data-i18n="q1">ehem. CTO, close2real GmbH</span></figcaption>
+      <div class="sec-head">
+        <h2 id="h-refs" data-i18n="hRefs">Empfehlungen</h2>
+        <p data-i18n="refsIntro">Was Kolleg:innen und Partner über die Zusammenarbeit sagen. Vollständig und im Original, aus meinem LinkedIn-Profil.</p>
+      </div>
+      <div class="refs">
+        <figure class="ref feature">
+          <blockquote lang="en">I had the pleasure of working closely with Philipp during our time together at close2real GmbH, where I served as CTO and he excelled as a Senior Online Marketing Manager. Philipp was an invaluable stakeholder representing the marketing department in our strategical roadmap planning and for different projects. From the very beginning, he demonstrated exceptional communication skills and an open-minded approach, making collaboration productive and enjoyable. He consistently showed a deep understanding of technical concepts and constraints, which greatly facilitated the alignment between our departments. His ability to bridge the gap between marketing and technology was truly impressive and contributed significantly to our project's success. In addition to his technical acumen, Philipp is a dedicated and innovative marketer. He continually brought fresh ideas to the table and was instrumental in driving our marketing initiatives forward. His strategic thinking and creativity not only boosted our campaigns but also helped in achieving our business goals. Working with Philipp was a fantastic experience, and I highly recommend him to any organization looking for a top-tier marketing professional. He is not only a great team player but also someone who can provide vision and integrity.</blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">SP</span><div><b>Sascha Perkowski</b><span data-i18n="q1">damals CTO, close2real GmbH · Juli 2024</span></div></figcaption>
         </figure>
-        <figure>
-          <blockquote lang="de">„Phil gehört zu den neugierigsten und intelligentesten Menschen, die ich kenne. Was Phil noch nicht weiß, bringt er sich in kurzer Zeit bei.“</blockquote>
-          <figcaption><b>Philipp Mallmann</b> · Game Designer &amp; Creative Developer</figcaption>
+        <figure class="ref">
+          <blockquote lang="de">Phil gehört zu den neugierigsten und intelligentesten Menschen, die ich kenne. Er ist stets darauf fokussiert die Zielgruppe zu verstehen und experimentell herauszufinden, welche Argumente in der Realität Wirkung zeigen. Was Phil noch nicht weiß, bringt er sich in kurzer Zeit bei. Seine Kreativität und seine Fähigkeit Kritik anzunehmen und zu geben, machen es zu einer großen Freude mit ihm Produkte am Markt zu platzieren.</blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">PM</span><div><b>Philipp Mallmann</b><span data-i18n="q2">Game Designer &amp; Creative Developer · Dezember 2019</span></div></figcaption>
         </figure>
-        <figure>
-          <blockquote lang="en">“I can highly recommend Phillipp Suess as a multi-talented professional and team-player with great reliability and creativity.”</blockquote>
-          <figcaption><b>Elke Kiausch</b> · Senior Lead Content Editor, ]init[ AG</figcaption>
+        <figure class="ref">
+          <blockquote lang="en">I can highly recommend Phillipp Suess as a multi-talented professional and team-player with great reliability and creativity. It's always a pleasure working with Phil. His great sense of humour makes every day working together truly enjoyable.</blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">EK</span><div><b>Elke Kiausch</b><span data-i18n="q3">Communication Consultant / Senior Lead Content Editor, ]init[ AG für digitale Kommunikation · Dezember 2019</span></div></figcaption>
         </figure>
-        <figure>
-          <blockquote lang="de">„Herausstechend ist die produktive und effiziente Arbeitsweise sowie die analytischen Fähigkeiten.“</blockquote>
-          <figcaption><b>Isabell Katzmarek</b> · <span data-i18n="q4">Google-Ads-Agentur</span></figcaption>
+        <figure class="ref">
+          <blockquote lang="de">Ein wahrer Segen für das Unternehmen close2real. Herausstechend ist die produktive und effiziente Arbeitsweise sowie die analytischen Fähigkeiten. Nebenbei besitzt er auch einen guten Sinn für Humor.</blockquote>
+          <figcaption class="who"><span class="av" aria-hidden="true">IK</span><div><b>Isabell Katzmarek</b><span data-i18n="q4">Google-Ads-Expertenagentur, Agenturpartnerin von close2real · März 2019</span></div></figcaption>
         </figure>
       </div>
-      <p class="more"><a href="https://www.linkedin.com/in/philippsuess/" data-i18n="moreRefs">Alle Empfehlungen auf LinkedIn ansehen →</a></p>
+      <p class="more"><a href="https://www.linkedin.com/in/philippsuess/details/recommendations/" data-i18n="moreRefs">Alle Empfehlungen auf LinkedIn ansehen →</a></p>
     </div>
   </section>
 </main>
@@ -374,14 +511,13 @@ section{scroll-margin-top:16px}
 <footer id="kontakt" class="site-foot">
   <div class="wrap inner">
     <h2 data-i18n="hContact">Marketing, Operations und KI zusammenbringen?</h2>
-    <p data-i18n="contactText">Mich interessieren Rollen, in denen Marketing, Operations und KI zusammenkommen. Ich freue mich über eine Nachricht.</p>
+    <p data-i18n="contactText">Mich interessieren Rollen, in denen Marketing, Operations und KI zusammenkommen. Schreib mir am liebsten direkt auf LinkedIn.</p>
     <div class="actions">
-      <a class="btn btn-solid" href="mailto:gimsech@gmail.com">gimsech@gmail.com</a>
-      <a class="btn btn-line" href="https://www.linkedin.com/in/philippsuess/">LinkedIn</a>
+      <a class="btn btn-solid" href="https://www.linkedin.com/in/philippsuess/"><svg aria-hidden="true"><use href="#in"/></svg><span data-i18n="ctaLinkedIn">Nachricht auf LinkedIn</span></a>
       <a class="btn btn-line" href="https://www.xing.com/profile/Philipp_Suess2">XING</a>
       <a class="btn btn-line" href="https://github.com/gimsech">GitHub</a>
     </div>
-    <div class="legal"><span>© 2026 Philipp Süß · Berlin</span></div>
+    <div class="legal">© 2026 Philipp Süß · Berlin</div>
   </div>
 </footer>
 
@@ -389,16 +525,16 @@ section{scroll-margin-top:16px}
 (function () {
   var EN = {
     skip: 'Skip to content',
-    navLabel: 'Main navigation', langLabel: 'Language', stepsLabel: 'Positions',
+    navLabel: 'Main navigation', langLabel: 'Language', pathLabel: 'Positions',
     navProjects: 'Projects', navCareer: 'Experience', navSkills: 'Expertise', navRefs: 'References', navContact: 'Contact',
     heroEyebrow: 'Marketing Lead · AI workflows · Berlin',
     heroTitle: 'A generalist by conviction.',
     heroLead: 'Rooted in design, at home in marketing, guided by data. Today I build the AI workflows my team runs on.',
     ctaProjects: 'See projects', ctaContact: 'Get in touch',
-    p1k: '01 · since 2006', p1d: 'Media design, UX, art direction',
-    p2k: '02 · since 2013', p2d: 'Brands, campaigns, go-to-market',
-    p3k: '03 · since 2019', p3t: 'Data', p3d: 'KPIs, tracking, A/B tests, BI',
-    p4k: '04 · today', p4t: 'AI', p4d: 'Automation and self-built tools',
+    p1k: 'since 2006', p1d: 'Media design, UX, art direction',
+    p2k: 'since 2013', p2d: 'Brands, campaigns, go-to-market',
+    p3t: 'Data', p3k: 'since 2019', p3d: 'KPIs, tracking, A/B tests, BI',
+    p4t: 'AI', p4k: 'today', p4d: 'Automation and self-built tools',
     n1: 'faster: routine tasks cut from an hour to a minute',
     n2v: '+400%', n2: 'company presence on LinkedIn through employer branding',
     n3: 'game releases a year, around two a month',
@@ -419,41 +555,55 @@ section{scroll-margin-top:16px}
     ebText: 'Rebuilt LinkedIn and social media: company presence on LinkedIn +400%, Kununu reviews +60%, recognised as a “Top Company” every year.',
     ebMeta: 'GAMOMAT · 2022 – 2024',
     hCareer: 'Experience',
-    t1w: '05/2020 – present',
-    t1o: 'Berlin · developer of online slots for regulated markets',
-    t1p: 'Leading the marketing team, marketing for around 24 releases a year, product launch event in Malta (2025), VIP and client events in Berlin and Barcelona, international trade shows such as ICE and SBC. Set up marketing AI-first with Claude, OpenAI, Gemini and Higgsfield.',
-    t2o: 'Berlin · Senior Online Marketing Manager',
-    t2p: 'Owned digital marketing for an e-learning platform for doctors, including budget and KPIs. Website relaunch with a new tracking concept, A/B and multivariate testing, key role in launching the e-commerce platform.',
-    t3o: 'Wunsiedel · Creative Strategist &amp; Project Lead',
-    t3p: '360° concepts, campaigns and brand workshops for clients in industry, food and lifestyle. Project lead, key account management and new business.',
-    t4h: 'B.A. Media Design', t4o: 'Hof University of Applied Sciences, Münchberg campus',
-    t4p: 'Focus on service and interaction design. Thesis: “Human, Video, Interaction”.',
+    gmDate: '05/2020 – present',
+    gmSub: 'Brand &amp; Design · developer of online slots for regulated markets',
+    r1d: '11/2024 – present',
+    r1: '<li>Lead the marketing team: prioritisation, task management, coaching and onboarding; alignment with management, product and partner management</li><li>Designed, built and run the marketing hub: one control centre tailored to our processes instead of many separate tools, with API and webhook integrations (n8n, Supabase, AWS S3). Tasks that took an hour now take a minute, half-day tasks five minutes</li><li>Set up marketing AI-first: embedded AI workflows with Claude, OpenAI, Gemini and Higgsfield for copy, images, video and processes in the team’s daily work</li><li>Rebuilt asset management on AWS S3 with automatic packaging; migrated marketing automation and newsletters from Mailchimp to MailerLite</li><li>Marketing for around 24 game releases a year; concept and delivery of the product launch event in Malta (2025)</li><li>Partner promotions such as the GAMOMAT Cup with a tiered, GGR-based discount structure</li>',
+    r2dur: '2 yrs 10 mos',
+    r2: '<li>Launched the Client Area as a partner and sales enablement platform with launch materials, assets and product information, together with IT and product management; since extended with promo packs, bonus buy notifications and G-RGS integration</li><li>Employer branding and social media: LinkedIn presence +400%, Kununu reviews +60%, recognised as a “Top Company” every year</li><li>Introduced internal benchmarks and BI reports for PR, LinkedIn and other activities</li><li>VIP and client events in Berlin and Barcelona, plus international trade shows (including ICE and SBC)</li>',
+    r3dur: '1 yr 8 mos',
+    r3: '<li>Established the first marketing processes: ticketing in Confluence, dailies, cross-team alignment</li><li>Redesigned two WordPress websites with an external agency: visitor numbers +25% since 2021</li><li>National and international press and communication; presentations and product materials for sales</li><li>Co-developed the “Gaming for the Climate” initiative</li>',
+    c2rDur: '1 yr 3 mos',
+    c2rSub: 'Senior Online Marketing Manager · digital continuing education for doctors',
+    c2r: '<li>Owned digital marketing for the e-learning platform, including budget and KPI development; worked with Salesforce as CRM</li><li>Website relaunch with a new tracking concept; data-driven A/B and multivariate testing</li><li>Interface to development; key role in launching the e-commerce platform</li>',
+    miDur: '5 yrs 7 mos',
+    miSub: 'Creative Strategist &amp; Project Lead · B2B/B2C creative agency',
+    mi: '<li>360° concepts, campaigns and brand workshops for clients in industry, food and lifestyle</li><li>Project and key account management, including proposals and new business</li><li>Google Ads, social media, websites with TYPO3, WordPress and Shopware; mentored apprentices and students</li>',
+    hEarlier: 'Earlier roles',
     e1: 'Intern, Interface Design', e2: 'Intern, Event Planning', e3: 'Working Student, Content &amp; Social Media',
-    e4: 'State-certified Design Assistant', e4s: 'Plauen · 2006 – 2009',
+    hEdu: 'Education',
+    edu1: 'B.A. Media Design', edu1s: 'Hof University of Applied Sciences, Münchberg campus',
+    edu2: 'State-certified Design Assistant, Media and Communication',
     hSkills: 'Expertise',
-    sk1h: 'Focus areas',
-    sk1: '<li>Marketing operations</li><li>AI workflows &amp; agents (LLM, MCP)</li><li>Internal tools &amp; prototyping</li><li>Process design &amp; documentation</li><li>KPI frameworks &amp; BI reporting</li><li>Product &amp; go-to-market marketing</li><li>Team leadership</li><li>Stakeholder management</li>',
-    tt2: 'n8n · MCP servers',
-    sk3h: 'Certificates',
-    c1: 'Anthropic Academy 2026: Claude Code in Action, Introduction to Model Context Protocol, AI Fluency for Builders, AI Fluency: Framework &amp; Foundations, AI Capabilities and Limitations, AI Fluency for Creative Work',
-    c2: 'Persuading with Personality',
-    sk4h: 'Languages &amp; award',
-    l1: 'German', l1s: 'native', l2: 'English',
-    aw: 'Werbekongress Berlin 2011, 1st place “Best Concept”',
+    skFocus: 'Focus areas',
+    sk1: '<li class="tag solid">Marketing operations</li><li class="tag solid">AI workflows &amp; agents (LLM, MCP)</li><li class="tag solid">Internal tools &amp; prototyping</li><li class="tag solid">Process design &amp; documentation</li><li class="tag solid">KPI frameworks &amp; BI reporting</li><li class="tag solid">Product &amp; go-to-market marketing</li><li class="tag solid">Marketing strategy &amp; positioning</li><li class="tag solid">PR &amp; employer branding</li><li class="tag solid">Events &amp; trade shows</li><li class="tag solid">Team leadership</li><li class="tag solid">Stakeholder management</li>',
+    tgAi: 'AI', tgAuto: 'Automation &amp; data', tgDev: 'Development &amp; web', tgMkt: 'CRM &amp; marketing automation', tgCollab: 'Collaboration &amp; design', tgLang: 'Languages',
+    mcp: 'MCP servers', lang1: 'German · native', lang2: 'English · C2',
+    hCerts: 'Certificates &amp; award',
+    aaTitle: '6 courses on Claude &amp; AI',
+    aaText: 'Official Anthropic courses, completed with a certificate. They cover exactly the stack I work with every day.',
+    cert: 'Certificate',
+    kLang: 'Language', kTraining: 'Training', kAward: 'Award',
+    haufe: 'Persuading with Personality', award: '1st place, “Best Concept”',
     hRefs: 'References',
-    q1: 'former CTO, close2real GmbH', q4: 'Google Ads agency',
+    refsIntro: 'What colleagues and partners say about working together. In full and in the original language, from my LinkedIn profile.',
+    q1: 'then CTO, close2real GmbH · July 2024',
+    q2: 'Game Designer &amp; Creative Developer · December 2019',
+    q3: 'Communication Consultant / Senior Lead Content Editor, ]init[ AG für digitale Kommunikation · December 2019',
+    q4: 'Google Ads expert agency, agency partner of close2real · March 2019',
     moreRefs: 'See all recommendations on LinkedIn →',
     hContact: 'Bringing marketing, operations and AI together?',
-    contactText: 'I am interested in roles where marketing, operations and AI come together. I look forward to hearing from you.'
+    contactText: 'I am interested in roles where marketing, operations and AI come together. The best way to reach me is a message on LinkedIn.',
+    ctaLinkedIn: 'Message me on LinkedIn'
   };
   var META = {
-    de: { title: 'Philipp Süß · Marketing Lead', desc: document.querySelector('meta[name="description"]').content },
-    en: { title: 'Philipp Süß · Marketing Lead', desc: 'Philipp Süß, Marketing Lead in Berlin. A marketing generalist rooted in design who builds AI workflows and internal tools for marketing teams.' }
+    de: document.querySelector('meta[name="description"]').content,
+    en: 'Philipp Süß, Marketing Lead in Berlin. A marketing generalist rooted in design who builds AI workflows and internal tools for marketing teams.'
   };
   var textEls = document.querySelectorAll('[data-i18n]');
   var ariaEls = document.querySelectorAll('[data-i18n-aria]');
   var DE = {};
-  textEls.forEach(function (el) { DE[el.dataset.i18n] = el.innerHTML; });
+  textEls.forEach(function (el) { if (!(el.dataset.i18n in DE)) DE[el.dataset.i18n] = el.innerHTML; });
   ariaEls.forEach(function (el) { DE[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
 
   function apply(lang) {
@@ -467,8 +617,7 @@ section{scroll-margin-top:16px}
       if (v != null) el.setAttribute('aria-label', v);
     });
     document.documentElement.lang = lang;
-    document.title = META[lang].title;
-    document.querySelector('meta[name="description"]').content = META[lang].desc;
+    document.querySelector('meta[name="description"]').content = META[lang];
     document.querySelectorAll('.lang button').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
     });
